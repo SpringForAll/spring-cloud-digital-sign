@@ -1,0 +1,25 @@
+spring:
+
+server:
+  port: 40215
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mappers/*Mapper.xml
+
+liumapp:
+  signature:
+    pdf:
+      port: 40216
+      startDelay: 3000
+      tmpDir: /usr/local/pdfSigner/tmp
+      keySotrePath: /usr/local/certificateGenerator/keystore
+      keyStorePd: 123456
+  ali:
+    oss:
+      AccessKeyId:
+
+
+
+

@@ -19,6 +19,11 @@
 
   <modules>
 	<module>keystore-manager</module>
+	<module>DNSQueen</module>
+	<module>ali-oss</module>
+	<module>pdf-signer</module>
+	<module>sign-helper</module>
+	<module>socket-pattern</module>
   </modules>
 
 </project>
