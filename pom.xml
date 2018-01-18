@@ -16,14 +16,9 @@
 		</developer>
 	</developers>
 
-
   <modules>
-	<module>keystore-manager</module>
-	<module>DNSQueen</module>
-	<module>ali-oss</module>
-	<module>pdf-signer</module>
-	<module>sign-helper</module>
-	<module>socket-pattern</module>
+    <module>digital-sign-engine</module>
+    <module>digital-sign-service</module>
   </modules>
 
 </project>
