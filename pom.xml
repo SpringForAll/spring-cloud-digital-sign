@@ -18,7 +18,7 @@
 
 
   <modules>
-
+	<module>keystore-manager</module>
   </modules>
-	
+
 </project>
