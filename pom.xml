@@ -32,8 +32,9 @@
 	</developers>
 
 	<modules>
-		<module>digital-sign-engine</module>
-		<module>digital-sign-service</module>
+		<!--<module>digital-sign-engine</module>-->
+		<!--<module>digital-sign-service</module>-->
+		<module>digital-sign-eureka</module>
 	</modules>
 
 	<dependencyManagement>
