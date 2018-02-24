@@ -1,11 +1,11 @@
-package com.liumapp.auth.zuul.gateway;
+package com.liumapp.digitalsign.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
- * Created by liumapp on 2/6/18 10:43 AM.
+ * Created by liumapp on 2/24/18 5:22 PM.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
