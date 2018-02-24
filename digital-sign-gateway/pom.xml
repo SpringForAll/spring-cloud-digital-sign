@@ -3,17 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.liumapp.auth.zuul</groupId>
-    <artifactId>spring-cloud-zuul-authentication</artifactId>
+    <groupId>com.liumapp.digitalsign</groupId>
+    <artifactId>spring-cloud-digital-sign</artifactId>
     <version>v1.0.0</version>
   </parent>
 
-  <groupId>com.liumapp.auth.zuul.gateway</groupId>
-  <artifactId>zuul-auth-gateway</artifactId>
+  <groupId>com.liumapp.digitalsign.gateway</groupId>
+  <artifactId>digital-sign-gateway</artifactId>
   <version>v1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>zuul-auth-gateway</name>
+  <name>digital-sign-gateway</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
@@ -38,29 +38,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-mobile</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.jsonwebtoken</groupId>
-      <artifactId>jjwt</artifactId>
-      <version>${jjwt.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mybatis.spring.boot</groupId>
-      <artifactId>mybatis-spring-boot-starter</artifactId>
-      <version>1.3.0</version>
-    </dependency>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid</artifactId>
-      <version>${druid.version}</version>
-    </dependency>
   </dependencies>
 
   <build>
@@ -75,15 +52,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.mybatis.generator</groupId>
-        <artifactId>mybatis-generator-maven-plugin</artifactId>
-        <version>1.3.4</version>
-        <configuration>
-          <verbose>true</verbose>
-          <overwrite>true</overwrite>
-        </configuration>
       </plugin>
     </plugins>
   </build>

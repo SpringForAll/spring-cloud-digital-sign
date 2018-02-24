@@ -18,8 +18,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<jjwt.version>0.7.0</jjwt.version>
-		<druid.version>1.0.11</druid.version>
 	</properties>
 
 	<developers>
