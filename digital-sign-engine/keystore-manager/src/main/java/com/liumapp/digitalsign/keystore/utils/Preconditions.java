@@ -1,4 +1,4 @@
-package com.liumapp.keystore.utils;
+package com.liumapp.digitalsign.keystore.utils;
 
 /**
  * Created by liumapp on 11/21/17.

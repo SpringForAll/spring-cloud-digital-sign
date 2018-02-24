@@ -1,8 +1,8 @@
-package com.liumapp.keystore.service;
+package com.liumapp.digitalsign.keystore.service;
 
-import com.liumapp.keystore.entity.CSR;
-import com.liumapp.keystore.entity.P7B;
-import com.liumapp.keystore.entity.Resource;
+import com.liumapp.digitalsign.keystore.entity.CSR;
+import com.liumapp.digitalsign.keystore.entity.P7B;
+import com.liumapp.digitalsign.keystore.entity.Resource;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

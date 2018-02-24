@@ -1,8 +1,8 @@
-package com.liumapp.keystore.signer;
+package com.liumapp.digitalsign.keystore.signer;
 
-import com.liumapp.keystore.entity.CSR;
-import com.liumapp.keystore.entity.P7B;
-import com.liumapp.keystore.service.KeyStoreAdapter;
+import com.liumapp.digitalsign.keystore.entity.CSR;
+import com.liumapp.digitalsign.keystore.entity.P7B;
+import com.liumapp.digitalsign.keystore.service.KeyStoreAdapter;
 import sun.security.x509.*;
 
 import java.io.IOException;

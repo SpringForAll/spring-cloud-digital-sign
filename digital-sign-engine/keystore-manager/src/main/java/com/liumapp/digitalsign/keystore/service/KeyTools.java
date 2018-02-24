@@ -1,6 +1,6 @@
-package com.liumapp.keystore.service;
+package com.liumapp.digitalsign.keystore.service;
 
-import com.liumapp.keystore.entity.Resource;
+import com.liumapp.digitalsign.keystore.entity.Resource;
 
 import java.io.IOException;
 import java.io.InputStream;

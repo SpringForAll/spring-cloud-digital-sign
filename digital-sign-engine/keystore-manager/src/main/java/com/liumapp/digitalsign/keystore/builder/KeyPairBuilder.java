@@ -1,7 +1,6 @@
-package com.liumapp.keystore.builder;
+package com.liumapp.digitalsign.keystore.builder;
 
-import com.liumapp.keystore.builder.CertificateBuilder;
-import com.liumapp.keystore.service.KeyStoreAdapter;
+import com.liumapp.digitalsign.keystore.service.KeyStoreAdapter;
 
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;

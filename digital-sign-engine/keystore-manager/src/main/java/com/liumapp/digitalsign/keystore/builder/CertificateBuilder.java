@@ -1,7 +1,7 @@
-package com.liumapp.keystore.builder;
+package com.liumapp.digitalsign.keystore.builder;
 
-import com.liumapp.keystore.service.KeyStoreAdapter;
-import com.liumapp.keystore.utils.Preconditions;
+import com.liumapp.digitalsign.keystore.utils.Preconditions;
+import com.liumapp.digitalsign.keystore.service.KeyStoreAdapter;
 import sun.security.x509.*;
 
 import java.io.IOException;

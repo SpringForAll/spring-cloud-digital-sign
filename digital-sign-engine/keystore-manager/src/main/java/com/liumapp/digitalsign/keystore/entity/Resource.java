@@ -1,8 +1,7 @@
-package com.liumapp.keystore.entity;
+package com.liumapp.digitalsign.keystore.entity;
 
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
