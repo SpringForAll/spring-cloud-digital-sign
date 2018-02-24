@@ -14,7 +14,7 @@
   <packaging>jar</packaging>
 
   <modules>
-    <module></module>
+    <module>keystore-manager</module>
   </modules>
 
   <name>digital-sign-engine</name>
