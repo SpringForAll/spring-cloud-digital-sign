@@ -7,6 +7,15 @@
 	<version>v1.0.0</version>
 	<packaging>pom</packaging>
 
+	<properties>
+		<spring-cloud.version>Dalston.SR2</spring-cloud.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<jjwt.version>0.7.0</jjwt.version>
+		<druid.version>1.0.11</druid.version>
+	</properties>
+
 	<developers>
 		<developer>
 			<id>liumapp</id>
@@ -16,9 +25,21 @@
 		</developer>
 	</developers>
 
-  <modules>
-    <module>digital-sign-engine</module>
-    <module>digital-sign-service</module>
-  </modules>
+	<modules>
+		<module>digital-sign-engine</module>
+		<module>digital-sign-service</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 </project>
