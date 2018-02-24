@@ -3,21 +3,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.6.RELEASE</version>
+    <groupId>com.liumapp.digitalsign.engine</groupId>
+    <artifactId>digital-sign-engine</artifactId>
+    <version>v1.0.0</version>
   </parent>
 
-  <groupId>com.liumapp.keystore</groupId>
+  <groupId>com.liumapp.digitalsign.keystore</groupId>
   <artifactId>keystore-manager</artifactId>
-  <version>v1.0.5</version>
+  <version>v1.0.0</version>
   <packaging>jar</packaging>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <springboot.version>1.5.6.RELEASE</springboot.version>
-    <java.version>1.8</java.version>
-  </properties>
 
   <name>keystore-manager</name>
   <url>http://maven.apache.org</url>
@@ -50,67 +44,8 @@
           <fork>true</fork>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.3</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.6</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.3</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
-
-  <licenses>
-    <license>
-      <name>Apache License 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-      <distribution>repo</distribution>
-      <comments>Managing KeyStore</comments>
-    </license>
-  </licenses>
 
   <developers>
     <developer>
@@ -119,23 +54,4 @@
       <email>liumapp.com@gmail.com</email>
     </developer>
   </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/liumapp/keystore-manager.git</connection>
-    <developerConnection>scm:git:https://github.com/liumapp/keystore-manager.git</developerConnection>
-    <url>https://github.com/liumapp/keystore-manager</url>
-    <tag>${project.version}</tag>
-  </scm>
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <name>Maven Central Staging Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
 </project>
