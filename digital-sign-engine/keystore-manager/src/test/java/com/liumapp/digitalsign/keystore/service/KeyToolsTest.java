@@ -35,24 +35,24 @@ public class KeyToolsTest {
     @Ignore
     @Test
     public void shouldGenerateKeyStoreWithKeyPair() throws Exception {
-        try (FileOutputStream out = new FileOutputStream("test.ks")) {
-            KeyTools.newKeyStore("1234")
+        try (FileOutputStream out = new FileOutputStream("../../keystore.ks")) {
+            KeyTools.newKeyStore("123456")
                     .newKeyPair()
                     .keyLength(2048)
                     .generateWithCertificate()
                     .withValidity(1, ChronoUnit.YEARS)
                     .withDistinguishName()
-                    .commonName("Andrea Como")
-                    .state("Toscana")
-                    .locality("Prato")
-                    .country("IT")
-                    .email("test@example.com")
+                    .commonName("demo keystore")
+                    .state("Hangzhou")
+                    .locality("Zhejiang")
+                    .country("China")
+                    .email("liumapp.com@gmail.com")
                     .build()
-                    .createInKeyStore("test", "456")
+                    .createInKeyStore("demo", "123123")
                     .writeTo(out);
             out.close();
         } finally {
-            File keyStoreFile = new File("test.ks");
+            File keyStoreFile = new File("../../keystore.ks");
             assertTrue(keyStoreFile.exists());
         }
     }
