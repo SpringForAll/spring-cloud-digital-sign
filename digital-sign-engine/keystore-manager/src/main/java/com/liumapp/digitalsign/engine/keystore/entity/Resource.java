@@ -11,7 +11,6 @@ import java.io.InputStream;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-@Component
 public class Resource {
 
     public static final String CLASSPATH_PREFIX = "classpath:";

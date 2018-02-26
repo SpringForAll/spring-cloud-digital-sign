@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * home-page:http://www.liumapp.com
  */
 @RestController
-@RequestMapping("/demo")
+@RequestMapping("demo")
 public class DemoController {
 
     @RequestMapping("")

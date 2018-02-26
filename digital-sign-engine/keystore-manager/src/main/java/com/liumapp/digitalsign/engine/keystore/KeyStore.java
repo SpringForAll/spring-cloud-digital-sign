@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * home-page:http://www.liumapp.com
  */
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {"com.liuampp.digitalsign.engine.keystore"})
+@SpringBootApplication
 public class KeyStore {
 
     public static void main (String[] args) {

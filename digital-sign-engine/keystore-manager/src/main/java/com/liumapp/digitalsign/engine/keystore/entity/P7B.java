@@ -15,7 +15,6 @@ import java.security.cert.X509Certificate;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-@Component
 public class P7B {
 
     private PKCS7 pkcs7;

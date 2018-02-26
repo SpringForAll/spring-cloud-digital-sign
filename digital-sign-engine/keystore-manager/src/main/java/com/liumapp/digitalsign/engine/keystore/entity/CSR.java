@@ -15,7 +15,6 @@ import java.security.SignatureException;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-@Component
 public class CSR {
 
     private PKCS10 pkcs10;

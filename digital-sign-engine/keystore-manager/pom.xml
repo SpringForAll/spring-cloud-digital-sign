@@ -8,7 +8,7 @@
     <version>v1.0.0</version>
   </parent>
 
-  <groupId>com.liumapp.digitalsign.keystore</groupId>
+  <groupId>com.liumapp.digitalsign.engine.keystore</groupId>
   <artifactId>keystore-manager</artifactId>
   <version>v1.0.0</version>
   <packaging>jar</packaging>

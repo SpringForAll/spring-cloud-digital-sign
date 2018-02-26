@@ -9,3 +9,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1234/eureka/
+zuul:
+  routes:
+    keystore-manager:
+      serviceId: keystore-manager
+      path: /**
