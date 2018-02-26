@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.keystore.config;
+package com.liumapp.digitalsign.engine.keystore.config;
 
 /**
  * Created by liumapp on 9/28/17.

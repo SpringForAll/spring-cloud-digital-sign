@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.keystore.entity;
+package com.liumapp.digitalsign.engine.keystore.entity;
 
 import org.springframework.stereotype.Component;
 import sun.security.pkcs.ContentInfo;

@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.keystore.builder;
+package com.liumapp.digitalsign.engine.keystore.builder;
 
 import sun.security.x509.X500Name;
 import sun.security.x509.X509CertInfo;
