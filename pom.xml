@@ -13,6 +13,9 @@
 	<version>v1.0.0</version>
 	<packaging>pom</packaging>
 
+	<name>spring-cloud-digital-sign</name>
+	<url>http://www.liumapp.com</url>
+
 	<properties>
 		<spring-cloud.version>Dalston.SR2</spring-cloud.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
