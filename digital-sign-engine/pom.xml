@@ -11,7 +11,7 @@
   <groupId>com.liumapp.digitalsign.engine</groupId>
   <artifactId>digital-sign-engine</artifactId>
   <version>v1.0.0</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <modules>
     <module>keystore-manager</module>
