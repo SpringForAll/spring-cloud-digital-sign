@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: keystore-manager
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1234/eureka/
+
+server:
+  port: 8081
+
