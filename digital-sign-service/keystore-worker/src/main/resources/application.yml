@@ -9,3 +9,9 @@ eureka:
 
 server:
   port: 8081
+
+liumapp:
+  digitalsign:
+    service:
+      keystore:
+        keyStoreSavePath: /usr/local/tomcat/project/spring-cloud-digital-sign/
