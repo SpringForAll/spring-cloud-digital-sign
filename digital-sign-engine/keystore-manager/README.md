@@ -1,2 +1,13 @@
 # keystore-manager
-Managing KeyStore ... under developing , plz don't use it right now
+Managing KeyStore ... 
+
+## responsibility
+
+* generate keystore 
+
+* generate certificate and saved in keystore
+
+* read or delete certificate in keystore
+
+
+

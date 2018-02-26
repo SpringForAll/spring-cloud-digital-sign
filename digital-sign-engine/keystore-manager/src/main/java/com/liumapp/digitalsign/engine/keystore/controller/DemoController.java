@@ -14,7 +14,7 @@ public class DemoController {
 
     @RequestMapping("")
     public String index () {
-        return "success";
+        return "hello , this is keystore manager demo .";
     }
 
 }
