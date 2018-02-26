@@ -3,6 +3,7 @@ package com.liumapp.digitalsign.keystore.service;
 import com.liumapp.digitalsign.keystore.entity.CSR;
 import com.liumapp.digitalsign.keystore.entity.P7B;
 import com.liumapp.digitalsign.keystore.entity.Resource;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -31,6 +32,7 @@ public class KeyToolsTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
+    @Ignore
     @Test
     public void shouldGenerateKeyStoreWithKeyPair() throws Exception {
         try (FileOutputStream out = new FileOutputStream("test.ks")) {
@@ -52,10 +54,10 @@ public class KeyToolsTest {
         } finally {
             File keyStoreFile = new File("test.ks");
             assertTrue(keyStoreFile.exists());
-            assertTrue(keyStoreFile.delete());
         }
     }
 
+    @Ignore
     @Test
     public void shouldGenerateKeyStoreWithTwoKeyPairs () throws Exception {
         try  {
@@ -112,6 +114,7 @@ public class KeyToolsTest {
      * plz make sure you have test2.ks
      * @throws Exception
      */
+    @Ignore
     @Test
     public void shouldPrintCert() throws Exception {
         Resource resource = Resource.from("test2.ks");
@@ -124,6 +127,7 @@ public class KeyToolsTest {
         out.close();
     }
 
+    @Ignore
     @Test
     public void shouldLoadKeyStoreFromClassPath() throws Exception {
         Resource resource = Resource.from("classpath:keystore.ks");
@@ -138,6 +142,7 @@ public class KeyToolsTest {
         assertEquals("CN=Andrea Como, ST=Toscana, L=Prato, C=IT", x509Certificate.getSubjectDN().getName());
     }
 
+    @Ignore
     @Test
     public void shouldGenerateCertificateSignRequest() throws Exception {
         Resource resource = Resource.from("classpath:keystore.ks");
@@ -151,6 +156,7 @@ public class KeyToolsTest {
         assertEquals("CN=Andrea Como, ST=Toscana, L=Prato, C=IT", csr.toPkcs10().getSubjectName().toString());
     }
 
+    @Ignore
     @Test
     public void shouldSignCertificateSignRequest() throws Exception {
         Resource resource = Resource.from("classpath:keystore.ks");
@@ -174,6 +180,7 @@ public class KeyToolsTest {
         assertEquals(2, certificates.length);
     }
 
+    @Ignore
     @Test
     public void shouldVerifySignedCertificate() throws Exception {
         Resource ca = Resource.from("classpath:ca.ks");
@@ -184,6 +191,7 @@ public class KeyToolsTest {
         signedKeyStore.verifyWithTrustStore("test", caKeyStore.toKeyStore());
     }
 
+    @Ignore
     @Test
     public void shouldNotVerifySignedCertificate() throws Exception {
         Resource ca = Resource.from("classpath:signed-by-ca.ks");

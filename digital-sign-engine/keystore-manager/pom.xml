@@ -17,6 +17,14 @@
   <url>http://maven.apache.org</url>
   <description>Managing KeyStore</description>
 
+  <developers>
+    <developer>
+      <name>liumapp</name>
+      <url>http://www.liumapp.com</url>
+      <email>liumapp.com@gmail.com</email>
+    </developer>
+  </developers>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -46,12 +54,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <developers>
-    <developer>
-      <name>liumapp</name>
-      <url>http://www.liumapp.com</url>
-      <email>liumapp.com@gmail.com</email>
-    </developer>
-  </developers>
 </project>
