@@ -1,6 +1,7 @@
 package com.liumapp.digitalsign.service.signature.config;
 
 import com.liumapp.digitalsign.engine.signature.helper.autowired.utils.FileUtil;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,6 +12,12 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class Config {
+
+    @Bean
+    @ConfigurationProperties(prefix = "liumapp.digitalsign.service.signature")
+    public Params params () {
+        return new Params();
+    }
 
     @Bean
     public FileUtil fileUtil () {
