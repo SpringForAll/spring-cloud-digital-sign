@@ -1,7 +1,8 @@
 package com.liumapp.digitalsign.service.signature.config;
 
+import com.liumapp.digitalsign.engine.signature.helper.autowired.utils.FileUtil;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 
 /**
  * Created by liumapp on 2/27/18 2:53 PM.
@@ -11,6 +12,9 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 public class Config {
 
-
+    @Bean
+    public FileUtil fileUtil () {
+        return new FileUtil();
+    }
 
 }
