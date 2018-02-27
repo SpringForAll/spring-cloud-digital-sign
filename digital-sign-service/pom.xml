@@ -27,6 +27,7 @@
 
   <modules>
     <module>keystore-worker</module>
+    <module>pdf-worker</module>
   </modules>
 
 </project>
