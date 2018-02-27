@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.security.*;
-import java.security.cert.CertificateException;
 import java.time.temporal.ChronoUnit;
 
 /**
+ * KeyStore Rest API
  * Created by liumapp on 2/26/18.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
@@ -28,6 +25,12 @@ public class KeyStoreController {
     @Autowired
     private Params params;
 
+    /**
+     * In the first generate keystore
+     * It's better to generate a simple certificate at the first time
+     * @param keyStorePattern
+     * @return String
+     */
     @RequestMapping("/first-generate")
     public ResponseEntity<?> firstGenerate (@RequestBody KeyStorePattern keyStorePattern) {
         try {
