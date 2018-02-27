@@ -14,7 +14,8 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>keystore-manager</module>
+    <!--<module>keystore-manager</module>-->
+    <module>sign-helper</module>
   </modules>
 
   <name>digital-sign-engine</name>
