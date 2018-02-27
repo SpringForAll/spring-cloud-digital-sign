@@ -1,18 +1,17 @@
 spring:
-  devtools:
-    restart:
-      exclude:  public/**
-      enabled:  true
-  thymeleaf:
-    suffix: .html
-    mode: HTML5
-    encoding: UTF-8
-    content-type: text/html; charset=utf-8
-    cache: false
+  application:
+    name: pdf-worker
 
-mybatis:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations: classpath*:mappers/*Mapper.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1234/eureka/
+
 server:
-  port: 8081
+  port: 8082
+
+#liumapp:
+#  digitalsign:
+#    service:
+#      keystore:
+#        keyStoreSavePath: /usr/local/tomcat/project/spring-cloud-digital-sign/
