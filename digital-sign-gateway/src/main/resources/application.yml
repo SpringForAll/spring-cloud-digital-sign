@@ -11,6 +11,6 @@ eureka:
       defaultZone: http://localhost:1234/eureka/
 zuul:
   routes:
-    keystore-manager:
-      serviceId: keystore-manager
+    keystore-worker:
+      serviceId: keystore-worker
       path: /**
