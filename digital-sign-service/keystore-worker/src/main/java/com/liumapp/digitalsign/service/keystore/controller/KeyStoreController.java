@@ -28,7 +28,7 @@ public class KeyStoreController {
     @Autowired
     private Params params;
 
-    @RequestMapping("/fg")
+    @RequestMapping("/first-generate")
     public ResponseEntity<?> firstGenerate (@RequestBody KeyStorePattern keyStorePattern) {
         try {
             String fileName = params.getKeyStoreSavePath() + "/" + keyStorePattern.getKeyStoreName();
