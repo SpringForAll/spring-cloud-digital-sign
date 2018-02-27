@@ -4,6 +4,7 @@ import com.liumapp.digitalsign.engine.keystore.entity.Resource;
 import com.liumapp.digitalsign.engine.keystore.service.KeyStoreAdapter;
 import com.liumapp.digitalsign.engine.keystore.service.KeyTools;
 import com.liumapp.digitalsign.service.keystore.config.Params;
+import com.liumapp.digitalsign.service.keystore.pattern.ExporterPattern;
 import com.liumapp.digitalsign.service.keystore.pattern.PersonalCertPattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.FileOutputStream;
+import java.security.cert.Certificate;
 import java.time.temporal.ChronoUnit;
 
 /**
@@ -26,8 +28,13 @@ public class CertificateController {
     @Autowired
     private Params params;
 
+    /**
+     * generate personal certificate
+     * @param personalCertPattern params required
+     * @return String
+     */
     @RequestMapping("/generate")
-    public ResponseEntity<?> generator (@RequestBody PersonalCertPattern personalCertPattern) {
+    public ResponseEntity<?> generate (@RequestBody PersonalCertPattern personalCertPattern) {
         try {
             Resource resource = Resource.from(params.getKeyStoreSavePath() + "/" + personalCertPattern.getKeystore());
             KeyStoreAdapter keyStoreAdapter = KeyTools.keyStoreFrom(resource , personalCertPattern.getStorepass());
@@ -53,7 +60,18 @@ public class CertificateController {
     }
 
     @RequestMapping("/export")
-    public ResponseEntity<?> export () {
+    public ResponseEntity<?> export (@RequestBody ExporterPattern exporterPattern) {
+        try {
+            Resource resource = Resource.from(params.getKeyStoreSavePath() + "/" + exporterPattern.getKeyStore());
+            KeyStoreAdapter keyStoreAdapter = KeyTools.keyStoreFrom(resource , exporterPattern.getKeyStorePd());
+            Certificate certificate = keyStoreAdapter.getCertificate(exporterPattern.getAlias());
+            FileOutputStream out = new FileOutputStream(exporterPattern.getSavePath() + "/" + exporterPattern.getFileName());
+            out.write(certificate.getEncoded());
+            out.close();
+        } catch (Exception e ) {
+            e.printStackTrace();
+            return null;
+        }
         return ResponseEntity.ok("export done");
     }
 
