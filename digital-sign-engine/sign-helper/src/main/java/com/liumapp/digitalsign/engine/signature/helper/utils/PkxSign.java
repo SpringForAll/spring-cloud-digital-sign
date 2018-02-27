@@ -1,4 +1,4 @@
-package com.liumapp.signature.pdf.helper.utils;
+package com.liumapp.digitalsign.engine.signature.helper.utils;
 
 
 import java.io.*;
@@ -14,6 +14,11 @@ import com.itextpdf.text.pdf.PdfStamper;
 import java.security.*;
 import java.security.cert.Certificate;
 
+/**
+ * Created by liumapp on 2/27/18 2:35 PM.
+ * E-mail:liumapp.com@gmail.com
+ * home-page:http://www.liumapp.com
+ */
 public class PkxSign {
 
     private static final String cert_path = "/usr/local/tomcat/project/pfxSigner/data/liumapp.pfx";

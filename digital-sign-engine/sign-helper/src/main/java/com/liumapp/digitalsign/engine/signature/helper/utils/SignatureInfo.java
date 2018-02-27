@@ -1,4 +1,4 @@
-package com.liumapp.signature.pdf.helper.utils;
+package com.liumapp.digitalsign.engine.signature.helper.utils;
 
 import com.itextpdf.text.pdf.PdfSignatureAppearance;
 import com.itextpdf.text.pdf.security.MakeSignature;
@@ -11,7 +11,6 @@ import java.security.cert.Certificate;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-
 public class SignatureInfo {
 
     private String reason; //理由

@@ -1,4 +1,4 @@
-package com.liumapp.signature.pdf.helper.utils;
+package com.liumapp.digitalsign.engine.signature.helper.utils;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,6 +12,11 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfSignatureAppearance;
 import com.itextpdf.text.pdf.PdfStamper;
 
+/**
+ * Created by liumapp on 2/27/18 2:35 PM.
+ * E-mail:liumapp.com@gmail.com
+ * home-page:http://www.liumapp.com
+ */
 public class Sign{
 	
 	// 证书密码

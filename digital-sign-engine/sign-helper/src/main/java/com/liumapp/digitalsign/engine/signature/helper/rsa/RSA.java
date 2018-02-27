@@ -1,4 +1,4 @@
-package com.liumapp.signature.pdf.helper.rsa;
+package com.liumapp.digitalsign.engine.signature.helper.rsa;
 
 import org.apache.commons.codec.binary.Hex;
 
