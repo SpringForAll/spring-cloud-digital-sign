@@ -37,7 +37,8 @@
 		<module>digital-sign-service</module>
 		<module>digital-sign-eureka</module>
 		<module>digital-sign-gateway</module>
-	</modules>
+    <module>digital-sign-config-server</module>
+  </modules>
 
 	<dependencyManagement>
 		<dependencies>
