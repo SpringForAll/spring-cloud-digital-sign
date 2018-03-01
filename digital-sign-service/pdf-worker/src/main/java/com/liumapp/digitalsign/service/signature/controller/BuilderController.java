@@ -3,7 +3,6 @@ package com.liumapp.digitalsign.service.signature.controller;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.liumapp.digitalsign.engine.signature.helper.autowired.utils.FileUtil;
-import com.liumapp.digitalsign.service.signature.config.Params;
 import com.liumapp.digitalsign.service.signature.pattern.SignatureAreaPattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,11 +26,11 @@ public class BuilderController {
     @Autowired
     private FileUtil fileUtil;
 
-    @Autowired
-    private Params params;
-
     @Value("${tmpDir}")
     private String tmpDir;
+
+    @Value("${keyStoreSavePath}")
+    private String keyStoreSavePath;
 
     /**
      * build signature area in pdf file
@@ -42,13 +41,13 @@ public class BuilderController {
         try {
             String fileResultName = signatureAreaPattern.getTmpFile() + "out";
 
-            PdfReader pdfReader = new PdfReader(params.getTmpDir() + "/" + signatureAreaPattern.getTmpFile());
-            FileOutputStream out = new FileOutputStream(params.getTmpDir() + "/" + fileResultName);
+            PdfReader pdfReader = new PdfReader(keyStoreSavePath + "/" + signatureAreaPattern.getTmpFile());
+            FileOutputStream out = new FileOutputStream(tmpDir + "/" + fileResultName);
             PdfStamper pdfStamper = new PdfStamper(pdfReader , out);
             pdfStamper.addSignature(signatureAreaPattern.getName() , signatureAreaPattern.getPageNumber() , signatureAreaPattern.getFirstX().floatValue() , signatureAreaPattern.getFirstY().floatValue() , signatureAreaPattern.getSecondX().floatValue() , signatureAreaPattern.getSecondY().floatValue());
             pdfStamper.close();
 
-            fileUtil.deleteFile(params.getTmpDir() + "/" + signatureAreaPattern.getTmpFile());
+            fileUtil.deleteFile(tmpDir + "/" + signatureAreaPattern.getTmpFile());
 
             return ResponseEntity.ok(fileResultName);
         } catch (Exception e) {
@@ -56,11 +55,6 @@ public class BuilderController {
             e.printStackTrace();
             return null;
         }
-    }
-
-    @RequestMapping("/getTmp")
-    public String getParams () {
-        return this.tmpDir;
     }
 
 }
