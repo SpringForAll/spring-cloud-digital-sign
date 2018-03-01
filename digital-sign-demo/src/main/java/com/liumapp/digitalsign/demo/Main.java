@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * Created by liumapp on 3/1/18 5:23 PM.
+ * Created by liumapp on 3/1/18 5:24 PM.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
