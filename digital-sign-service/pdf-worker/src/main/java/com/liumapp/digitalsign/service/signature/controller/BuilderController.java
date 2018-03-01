@@ -6,6 +6,7 @@ import com.liumapp.digitalsign.engine.signature.helper.autowired.utils.FileUtil;
 import com.liumapp.digitalsign.service.signature.config.Params;
 import com.liumapp.digitalsign.service.signature.pattern.SignatureAreaPattern;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,14 @@ public class BuilderController {
     @Autowired
     private Params params;
 
+    @Value("${tmpDir}")
+    private String tmpDir;
+
+    /**
+     * build signature area in pdf file
+     * @param signatureAreaPattern params
+     * @return String
+     */
     public ResponseEntity<?> makeArea (@RequestBody SignatureAreaPattern signatureAreaPattern) {
         try {
             String fileResultName = signatureAreaPattern.getTmpFile() + "out";
@@ -48,4 +57,10 @@ public class BuilderController {
             return null;
         }
     }
+
+    @RequestMapping("/getTmp")
+    public String getParams () {
+        return this.tmpDir;
+    }
+
 }

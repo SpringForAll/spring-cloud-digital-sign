@@ -14,3 +14,7 @@ zuul:
     keystore-worker:
       serviceId: keystore-worker
       path: /**
+    pdf-worker:
+      serviceId: pdf-worker
+      path: /**
+
