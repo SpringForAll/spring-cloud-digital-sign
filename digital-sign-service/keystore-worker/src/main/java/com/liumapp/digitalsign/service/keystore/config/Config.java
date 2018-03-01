@@ -1,7 +1,5 @@
 package com.liumapp.digitalsign.service.keystore.config;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -12,10 +10,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Config {
 
-    @Bean
-    @ConfigurationProperties(prefix = "liumapp.digitalsign.service.keystore")
-    public Params params () {
-        return new Params();
-    }
 
 }

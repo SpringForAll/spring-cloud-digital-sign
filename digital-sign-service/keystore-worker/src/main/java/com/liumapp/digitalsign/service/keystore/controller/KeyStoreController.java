@@ -1,9 +1,8 @@
 package com.liumapp.digitalsign.service.keystore.controller;
 
 import com.liumapp.digitalsign.engine.keystore.service.KeyTools;
-import com.liumapp.digitalsign.service.keystore.config.Params;
 import com.liumapp.digitalsign.service.keystore.pattern.KeyStorePattern;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +21,8 @@ import java.time.temporal.ChronoUnit;
 @RequestMapping("keystore")
 public class KeyStoreController {
 
-    @Autowired
-    private Params params;
+    @Value("${keyStoreSavePath}")
+    private String keyStoreSavePath;
 
     /**
      * In the first generate keystore
@@ -34,7 +33,7 @@ public class KeyStoreController {
     @RequestMapping("/first-generate")
     public ResponseEntity<?> firstGenerate (@RequestBody KeyStorePattern keyStorePattern) {
         try {
-            String fileName = params.getKeyStoreSavePath() + "/" + keyStorePattern.getKeyStoreName();
+            String fileName = keyStoreSavePath + "/" + keyStorePattern.getKeyStoreName();
             FileOutputStream out = new FileOutputStream(fileName);
             KeyTools.newKeyStore(keyStorePattern.getKeyStorePd())
                     .newKeyPair()

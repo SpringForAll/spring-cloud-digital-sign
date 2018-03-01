@@ -3,10 +3,9 @@ package com.liumapp.digitalsign.service.keystore.controller;
 import com.liumapp.digitalsign.engine.keystore.entity.Resource;
 import com.liumapp.digitalsign.engine.keystore.service.KeyStoreAdapter;
 import com.liumapp.digitalsign.engine.keystore.service.KeyTools;
-import com.liumapp.digitalsign.service.keystore.config.Params;
 import com.liumapp.digitalsign.service.keystore.pattern.ExporterPattern;
 import com.liumapp.digitalsign.service.keystore.pattern.PersonalCertPattern;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +24,8 @@ import java.time.temporal.ChronoUnit;
 @RequestMapping("certificate")
 public class CertificateController {
 
-    @Autowired
-    private Params params;
+    @Value("${keyStoreSavePath}")
+    private String keyStoreSavePath;
 
     /**
      * generate personal certificate
@@ -36,7 +35,7 @@ public class CertificateController {
     @RequestMapping("/generate")
     public ResponseEntity<?> generate (@RequestBody PersonalCertPattern personalCertPattern) {
         try {
-            Resource resource = Resource.from(params.getKeyStoreSavePath() + "/" + personalCertPattern.getKeystore());
+            Resource resource = Resource.from(keyStoreSavePath + "/" + personalCertPattern.getKeystore());
             KeyStoreAdapter keyStoreAdapter = KeyTools.keyStoreFrom(resource , personalCertPattern.getStorepass());
             keyStoreAdapter.newKeyPair()
                     .keyLength(personalCertPattern.getKeysize())
@@ -49,7 +48,7 @@ public class CertificateController {
                     .country(personalCertPattern.getCountry())
                     .build()
                     .createInKeyStore(personalCertPattern.getAlias() , personalCertPattern.getCertPassword());
-            FileOutputStream out = new FileOutputStream(params.getKeyStoreSavePath() + "/" + personalCertPattern.getKeystore());
+            FileOutputStream out = new FileOutputStream(keyStoreSavePath + "/" + personalCertPattern.getKeystore());
             keyStoreAdapter.writeTo(out);
             out.close();
         } catch (Exception e) {
@@ -62,7 +61,7 @@ public class CertificateController {
     @RequestMapping("/export")
     public ResponseEntity<?> export (@RequestBody ExporterPattern exporterPattern) {
         try {
-            Resource resource = Resource.from(params.getKeyStoreSavePath() + "/" + exporterPattern.getKeyStore());
+            Resource resource = Resource.from(keyStoreSavePath + "/" + exporterPattern.getKeyStore());
             KeyStoreAdapter keyStoreAdapter = KeyTools.keyStoreFrom(resource , exporterPattern.getKeyStorePd());
             Certificate certificate = keyStoreAdapter.getCertificate(exporterPattern.getAlias());
             FileOutputStream out = new FileOutputStream(exporterPattern.getSavePath() + "/" + exporterPattern.getFileName());
