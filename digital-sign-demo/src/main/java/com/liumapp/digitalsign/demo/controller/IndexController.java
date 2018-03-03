@@ -53,10 +53,14 @@ public class IndexController {
 
     /**
      * todo
+     * plz make sure you had generated keystore before
      * generate certificate
      * @return String
      */
     public String generateCertificate () {
+//        try {
+//
+//        }
         return "success";
     }
 
