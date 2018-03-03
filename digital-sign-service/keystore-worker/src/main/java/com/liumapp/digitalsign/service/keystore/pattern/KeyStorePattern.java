@@ -9,8 +9,6 @@ public class KeyStorePattern {
 
     private String keyStoreName;
 
-    private String generatorPd;
-
     private String keyStorePd;
 
     private Integer keyLength = 2048;
@@ -39,9 +37,8 @@ public class KeyStorePattern {
 
     private String fcPassword;
 
-    public KeyStorePattern(String keyStoreName, String generatorPd, String keyStorePd, String fcName, String fcProvince, String fcCity, String fcCountry, String fcAlias, String fcPassword) {
+    public KeyStorePattern(String keyStoreName, String keyStorePd, String fcName, String fcProvince, String fcCity, String fcCountry, String fcAlias, String fcPassword) {
         this.keyStoreName = keyStoreName;
-        this.generatorPd = generatorPd;
         this.keyStorePd = keyStorePd;
         this.fcName = fcName;
         this.fcProvince = fcProvince;
@@ -57,14 +54,6 @@ public class KeyStorePattern {
 
     public void setKeyStoreName(String keyStoreName) {
         this.keyStoreName = keyStoreName;
-    }
-
-    public String getGeneratorPd() {
-        return generatorPd;
-    }
-
-    public void setGeneratorPd(String generatorPd) {
-        this.generatorPd = generatorPd;
     }
 
     public String getKeyStorePd() {

@@ -5,6 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.HashMap;
+
 /**
  * Created by liumapp on 3/1/18.
  * E-mail:liumapp.com@gmail.com
@@ -18,13 +22,33 @@ public class IndexController {
     private HttpClientUtils httpClientUtils;
 
     /**
-     * todo
      * generate keystore
+     * you need generate at least one certificate
      * @return String
      */
     @RequestMapping("/ks")
     public String generateKeyStore () {
-        return "success";
+        try {
+            HashMap<String , Object> urlParameters = new HashMap<String , Object>();
+            urlParameters.put("keyStoreName" , "demo.ks");
+            urlParameters.put("keyStorePd" , "123456");
+            urlParameters.put("fcName" , "zhangsan");
+            urlParameters.put("fcProvince" , "ZheJiang");
+            urlParameters.put("fcCity" , "Hangzhou");
+            urlParameters.put("fcCountry" , "China");
+            urlParameters.put("fcAlias" , "demo-certificate");
+            urlParameters.put("fcPassword" , "123123");
+            BufferedReader reader = httpClientUtils.post("http://localhost:2333/keystore-worker/keystore/first-generate", urlParameters);
+            StringBuffer result = new StringBuffer();
+            String line = "";
+            while ((line = reader.readLine()) != null) {
+                result.append(line);
+            }
+            return result.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     /**
