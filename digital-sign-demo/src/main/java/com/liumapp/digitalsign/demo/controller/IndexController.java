@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("demo")
 public class IndexController {
 
-    
+//    private String
+
+    @RequestMapping("/hello")
+    public String idnex () {
+        return "success";
+    }
 
 }
