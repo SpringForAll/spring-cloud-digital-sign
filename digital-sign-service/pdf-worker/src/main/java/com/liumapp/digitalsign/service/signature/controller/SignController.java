@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.security.KeyStore;
 import java.security.PrivateKey;
@@ -60,19 +59,13 @@ public class SignController {
             signatureInfo.setRenderingMode(PdfSignatureAppearance.RenderingMode.GRAPHIC);
 
             Sign.sign(tmpDir + pdfSignPattern.getTmpPdf() , tmpDir + tmpPdfOut , signatureInfo);
-            ossUtil.uploadFile("signed" + pdfSignPattern.getPdfKey() , new File(params.getTmpDir() + "/" + tmpPdfOut));
 
-            fileUtil.deleteFile(params.getTmpDir() + "/" + pdfSignPattern.getTmpImg());
-            fileUtil.deleteFile(params.getTmpDir() + "/" + pdfSignPattern.getTmpPdf());
-            fileUtil.deleteFile(params.getTmpDir() + "/" + tmpPdfOut);
-
-            return "signed" + pdfSignPattern.getPdfKey();
+            return ResponseEntity.ok("success");
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return ResponseEntity.ok("error");
         }
 
-        return ResponseEntity.ok("success");
     }
 
 }
