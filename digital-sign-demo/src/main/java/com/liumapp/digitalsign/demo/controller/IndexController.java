@@ -52,7 +52,6 @@ public class IndexController {
     }
 
     /**
-     * todo
      * plz make sure you had generated keystore before
      * generate certificate
      * @return String
@@ -61,7 +60,13 @@ public class IndexController {
         try {
             HashMap<String , Object> urlParameters = new HashMap<String , Object>();
             urlParameters.put("alias" , "demo-a");
-            
+            urlParameters.put("certPassword" , "123123123");
+            urlParameters.put("keystore" , "demo.ks");//the keystore coming from generateKeyStore
+            urlParameters.put("storepass" , "123456");//use the password of keystore
+            urlParameters.put("province" , "ZheJiang");
+            urlParameters.put("city" , "Hangzhou");
+            urlParameters.put("country" , "China");
+            urlParameters.put("name" , "lisi");
             BufferedReader reader = httpClientUtils.post("http://localhost:2333/keystore-worker/certificate/generate" , urlParameters);
             StringBuffer result = new StringBuffer();
             String line = "";
