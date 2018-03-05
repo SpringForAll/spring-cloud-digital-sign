@@ -117,6 +117,7 @@ public class IndexController {
      * @return String
      */
     public String addSigatureArea () {
+
         return "success";
     }
 
