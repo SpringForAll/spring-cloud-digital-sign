@@ -60,7 +60,8 @@ public class IndexController {
     public String generateCertificate () {
         try {
             HashMap<String , Object> urlParameters = new HashMap<String , Object>();
-            urlParameters.put();
+            urlParameters.put("alias" , "demo-a");
+            
             BufferedReader reader = httpClientUtils.post("http://localhost:2333/keystore-worker/certificate/generate" , urlParameters);
             StringBuffer result = new StringBuffer();
             String line = "";

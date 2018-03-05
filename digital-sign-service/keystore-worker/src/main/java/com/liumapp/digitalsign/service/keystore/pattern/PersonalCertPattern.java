@@ -103,8 +103,23 @@ public class PersonalCertPattern {
 
     }
 
+    /**
+     * simple version
+     */
+    public PersonalCertPattern(String alias, String certPassword, String keystore, String storepass, String province, String city, String country, String name) {
+        this.alias = alias;
+        this.certPassword = certPassword;
+        this.keystore = keystore;
+        this.storepass = storepass;
+        this.province = province;
+        this.city = city;
+        this.country = country;
+        this.name = name;
+    }
 
-
+    /**
+     * complete version
+     */
     public PersonalCertPattern(String alias, String certPassword, String keystore, String storepass, String identityCode, String keypass, String name, String firstname, String lastname, String organization, String province, String city, String area, String country, String sex) {
         this.alias = alias;
         this.certPassword = certPassword;
