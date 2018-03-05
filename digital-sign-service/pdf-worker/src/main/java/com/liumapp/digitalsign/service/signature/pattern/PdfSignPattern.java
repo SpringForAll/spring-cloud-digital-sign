@@ -30,10 +30,14 @@ public class PdfSignPattern {
 
     private String tmpPdf;
 
+    private String keystore;
+
+    private String keystorePd;
+
     public PdfSignPattern() {
     }
 
-    public PdfSignPattern(String imgKey, String pdfKey, String alias, String certPd, String signatureField, String tmpImg, String tmpPdf) {
+    public PdfSignPattern(String imgKey, String pdfKey, String alias, String certPd, String signatureField, String tmpImg, String tmpPdf, String keystore, String keystorePd) {
         this.imgKey = imgKey;
         this.pdfKey = pdfKey;
         this.alias = alias;
@@ -41,6 +45,24 @@ public class PdfSignPattern {
         this.signatureField = signatureField;
         this.tmpImg = tmpImg;
         this.tmpPdf = tmpPdf;
+        this.keystore = keystore;
+        this.keystorePd = keystorePd;
+    }
+
+    public String getKeystore() {
+        return keystore;
+    }
+
+    public void setKeystore(String keystore) {
+        this.keystore = keystore;
+    }
+
+    public String getKeystorePd() {
+        return keystorePd;
+    }
+
+    public void setKeystorePd(String keystorePd) {
+        this.keystorePd = keystorePd;
     }
 
     public String getImgKey() {
