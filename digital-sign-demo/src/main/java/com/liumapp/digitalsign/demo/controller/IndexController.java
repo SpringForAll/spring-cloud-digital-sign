@@ -58,10 +58,20 @@ public class IndexController {
      * @return String
      */
     public String generateCertificate () {
-//        try {
-//
-//        }
-        return "success";
+        try {
+            HashMap<String , Object> urlParameters = new HashMap<String , Object>();
+            urlParameters.put();
+            BufferedReader reader = httpClientUtils.post("http://localhost:2333/keystore-worker/certificate/generate" , urlParameters);
+            StringBuffer result = new StringBuffer();
+            String line = "";
+            while ((line = reader.readLine()) != null) {
+                result.append(line);
+            }
+            return result.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     /**
