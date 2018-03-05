@@ -2,6 +2,7 @@ package com.liumapp.digitalsign.demo.controller;
 
 import com.liumapp.digitalsign.demo.utils.HttpClientUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,9 @@ public class IndexController {
 
     @Autowired
     private HttpClientUtils httpClientUtils;
+
+    @Value("${certificateExportPath}")
+    private String certificateExportPath;
 
     /**
      * generate keystore
@@ -81,12 +85,30 @@ public class IndexController {
     }
 
     /**
-     * todo
      * export certificate
+     * plz make sure you had keystore & certificate in it .
      * @return String
      */
     public String exportCertificate () {
-        return "success";
+        try {
+            HashMap<String , Object> urlParameters = new HashMap<String , Object>();
+            urlParameters.put("keyStore" , "demo.ks");//the keystore coming from generateKeyStore
+            urlParameters.put("keyStorePd" , "123456");
+            urlParameters.put("alias" , "demo-a");//alias coming from generateCertificate
+            urlParameters.put("certPd" , "123123123");//cert password coming form generateCertificate
+            urlParameters.put("savePath" , certificateExportPath);
+            urlParameters.put("fileName" , "demo.cert");
+            BufferedReader reader = httpClientUtils.post("http://localhost:2333/keystore-worker/certificate/export" , urlParameters);
+            StringBuffer result = new StringBuffer();
+            String line = "";
+            while ((line = reader.readLine()) != null) {
+                result.append(line);
+            }
+            return result.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     /**
