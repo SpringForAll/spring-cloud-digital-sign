@@ -37,6 +37,11 @@ public class SignController {
     @Value("${tmpDir}")
     private String tmpDir;
 
+    /**
+     * sign certificate into pdf file
+     * @param pdfSignPattern params
+     * @return String
+     */
     @RequestMapping("")
     public ResponseEntity<?> sign (@RequestBody PdfSignPattern pdfSignPattern) {
         try {
