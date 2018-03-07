@@ -1,6 +1,6 @@
 spring:
   application:
-    name: digital-sign-config-server
+    name: @project.artifactId@
   cloud:
     config:
       server:
