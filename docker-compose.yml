@@ -1,0 +1,63 @@
+version: '2'
+
+services:
+  config-server:
+    image: liumapp/digital-sign-config-server:v1.0.0
+    restart: always
+    container_name: config-server
+    hostname: config-server
+    ports:
+        - "7001:7001"
+    depends_on:
+        - sign-eureka
+
+  sign-demo:
+    image: liumapp/digital-sign-demo:v1.0.0
+    restart: always
+    container_name: sign-demo
+    hostname: sign-demo
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sign-eureka
+      - config-server
+
+  sign-eureka:
+    image: liumapp/digital-sign-eureka:v1.0.0
+    restart: always
+    container_name: sign-eureka
+    hostname: sign-eureka
+    ports:
+      - "1234:1234"
+
+  sign-gateway:
+    image: liumapp/digital-sign-gateway:v1.0.0
+    restart: always
+    container_name: sign-gateway
+    hostname: sign-gateway
+    ports:
+      - "2333:2333"
+    depends_on:
+      - sign-eureka
+
+  sign-keystore-worker:
+    image: liumapp/keystore-worker:v1.0.0
+    restart: always
+    container_name: sign-keystore-worker
+    hostname: sign-keystore-worker
+    ports:
+      - "8081:8081"
+    depends_on:
+      - sign-eureka
+      - config-server
+
+  sign-pdf-worker:
+    image: liumapp/pdf-worker:v1.0.0
+    restart: always
+    container_name: sign-pdf-worker
+    hostname: sign-pdf-worker
+    ports:
+      - "8082:8082"
+    depends_on:
+      - sign-eureka
+      - config-server
