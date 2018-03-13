@@ -16,3 +16,17 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 ## digital-sign-ui
 
 * Demo ui for beginners.
+
+## how to use 
+
+* build maven project and push them into docker by running "build-images.sh"
+ 
+* running project by using docker-compose :
+ 
+        docker-compose up -d 
+        
+    then , you can view http://localhost:1234/ and find :
+     
+     
+            
+            
