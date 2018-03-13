@@ -25,10 +25,13 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
  
         docker-compose up -d 
         
-    then , you can view http://localhost:1234/ and find :
+    then , you can view http://localhost:1234/ and find : (this is going to take about 2~3 mins in Mac Pro , plz be patient)
     
     ![start_done.jpg](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/pic/start_done.jpg)
      
+    and in docker pannel , you can find : 
+     
+    ![docker_pannel.jpg](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/pic/docker_pannel.jpg)
      
             
             
