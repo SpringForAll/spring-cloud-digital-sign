@@ -12,6 +12,12 @@ echo '$                                                           $'
 echo '============================================================='
 echo '.'
 
+cd digital-sign-engine
+
+mvn clean install
+
+cd ..
+
 cd digital-sign-config-server
 
 mvn clean package docker:build
@@ -43,5 +49,7 @@ mvn clean package docker:build
 cd ../..
 
 cd digital-sign-service/pdf-worker
+
+mvn clean package docker:build
 
 cd ../../
