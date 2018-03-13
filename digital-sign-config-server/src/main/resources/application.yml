@@ -14,5 +14,5 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://sign-eureka:1234/eureka/
+      defaultZone: ${SERVICE_REGISTRY_URL}
 

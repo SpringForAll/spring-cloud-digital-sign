@@ -10,6 +10,8 @@ services:
         - "7001:7001"
     depends_on:
         - sign-eureka
+    environment:
+        SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
 
   sign-demo:
     image: liumapp/digital-sign-demo:v1.0.0
