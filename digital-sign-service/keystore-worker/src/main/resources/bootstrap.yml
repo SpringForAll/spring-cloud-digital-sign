@@ -1,6 +1,6 @@
 spring:
   application:
-    name: @project.artifactId@
+    name: keystore-worker
   cloud:
     config:
       discovery:

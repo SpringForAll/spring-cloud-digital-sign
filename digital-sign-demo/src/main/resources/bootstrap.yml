@@ -1,13 +1,13 @@
 spring:
   application:
-    name: @project.artifactId@
+    name: digital-sign-demo
   cloud:
     config:
       discovery:
         enabled: true
         serviceId: digital-sign-config-server
-    profile: dev
-    label: master
+      profile: dev
+      label: master
 server:
   port: 8080
 eureka:
