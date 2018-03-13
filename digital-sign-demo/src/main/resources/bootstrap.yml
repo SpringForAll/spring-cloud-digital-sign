@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: @project.artifactId@
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: digital-sign-config-server
+    profile: dev
+    label: master
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: ${SERVICE_REGISTRY_URL}
