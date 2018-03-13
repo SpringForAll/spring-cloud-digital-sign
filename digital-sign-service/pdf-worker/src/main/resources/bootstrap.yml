@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: pdf-worker
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: digital-sign-config-server
+      profile: dev
+      label: master
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone:${SERVICE_REGISTRY_URL}
