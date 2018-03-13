@@ -11,7 +11,7 @@ services:
     depends_on:
         - sign-eureka
     environment:
-        SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
+      SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
 
   sign-demo:
     image: liumapp/digital-sign-demo:v1.0.0
@@ -23,6 +23,8 @@ services:
     depends_on:
       - sign-eureka
       - config-server
+    environment:
+      SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
 
   sign-eureka:
     image: liumapp/digital-sign-eureka:v1.0.0
@@ -31,6 +33,8 @@ services:
     hostname: sign-eureka
     ports:
       - "1234:1234"
+    environment:
+      SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
 
   sign-gateway:
     image: liumapp/digital-sign-gateway:v1.0.0
@@ -41,6 +45,8 @@ services:
       - "2333:2333"
     depends_on:
       - sign-eureka
+    environment:
+      SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
 
   sign-keystore-worker:
     image: liumapp/keystore-worker:v1.0.0
@@ -52,6 +58,8 @@ services:
     depends_on:
       - sign-eureka
       - config-server
+    environment:
+      SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
 
   sign-pdf-worker:
     image: liumapp/pdf-worker:v1.0.0
@@ -63,3 +71,5 @@ services:
     depends_on:
       - sign-eureka
       - config-server
+    environment:
+      SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
