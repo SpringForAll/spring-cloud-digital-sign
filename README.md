@@ -13,10 +13,6 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 
 * REST service . 
 
-## digital-sign-ui
-
-* Demo ui for beginners.
-
 ## how to use 
 
 * build maven project and push them into docker by running "build-images.sh"
@@ -33,5 +29,9 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
      
     ![docker_pannel.jpg](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/pic/docker_pannel.jpg)
      
+### generate a keystore
+            
+A keystore is a container of certificate . 
+            
             
             

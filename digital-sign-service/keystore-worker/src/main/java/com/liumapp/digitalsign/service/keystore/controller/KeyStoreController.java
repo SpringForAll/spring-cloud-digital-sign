@@ -24,6 +24,11 @@ public class KeyStoreController {
     @Value("${keyStoreSavePath}")
     private String keyStoreSavePath;
 
+    @RequestMapping("/hello")
+    public ResponseEntity<?> hello () {
+        return ResponseEntity.ok("this is keystore worker , ready to work") ;
+    }
+
     /**
      * In the first generate keystore
      * It's better to generate a simple certificate at the first time
