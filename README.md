@@ -16,6 +16,12 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 ## how to use 
 
 * build maven project and push them into docker by running "build-images.sh"
+
+    plz pay attention , you need install digital-sign-engine first . (if not , maven will report an error that no denpendency find . )
+    
+        cd digital-sign-engine
+        
+        mvn install
  
 * running project by using docker-compose :
  
