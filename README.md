@@ -38,6 +38,15 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 ### generate a keystore
             
 A keystore is a container of certificate . 
-            
+
+Plz make sure all the pattern get their own empty constructor . 
+
+* open your browser , and visit : http://localhost:2333/digital-sign-demo/demo/ks 
+
+    if return msg is : "generate done" 
+    
+    you can find a demo.ks file in your project . 
+    
+           
             
             
