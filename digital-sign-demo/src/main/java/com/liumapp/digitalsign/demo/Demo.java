@@ -9,8 +9,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-@SpringBootApplication
 @EnableDiscoveryClient
+@SpringBootApplication
 public class Demo {
 
     public static void main(String[] args) {

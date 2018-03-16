@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * home-page:http://www.liumapp.com
  */
 @EnableEurekaServer
-@SpringBootApplication(scanBasePackages = {"com.liumapp.digitalsign.eureka"})
+@SpringBootApplication
 public class Eureka {
 
     public static void main(String[] args) {
