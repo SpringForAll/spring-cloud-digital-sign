@@ -15,6 +15,8 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 
 ## how to use 
 
+### run in docker 
+
 * build maven project and push them into docker by running "build-images.sh"
 
     plz pay attention , you need install digital-sign-engine first . (if not , maven will report an error that no denpendency find . )
@@ -34,6 +36,14 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
     and in docker pannel , you can find : 
      
     ![docker_pannel.jpg](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/pic/docker_pannel.jpg)
+    
+### run in your own IDE
+
+* import the project .
+
+* update your local hosts file , add "127.0.0.1 sign-eureka"
+
+* start eureka first , then config-server , then gateway , then service ...    
      
 ### generate a keystore
             
