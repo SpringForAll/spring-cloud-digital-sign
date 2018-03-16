@@ -8,7 +8,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: ${SERVICE_REGISTRY_URL}
+      defaultZone: http://sign-eureka:1234/eureka/
 zuul:
   routes:
     keystore-worker:
