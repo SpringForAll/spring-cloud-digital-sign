@@ -26,8 +26,7 @@ services:
       - config-server
     environment:
       SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
-      JPDA_ADDRESS: "8000"
-      JPDA_TRANSPORT: "dt_socket"
+      XDEBUG_CONFIG: agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000
 
   sign-eureka:
     image: liumapp/digital-sign-eureka:v1.0.0
