@@ -60,6 +60,7 @@ public class IndexController {
      * generate certificate
      * @return String
      */
+    @RequestMapping("/generateCert")
     public String generateCertificate () {
         try {
             HashMap<String , Object> urlParameters = new HashMap<String , Object>();

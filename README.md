@@ -47,6 +47,20 @@ Plz make sure all the pattern get their own empty constructor .
     
     you can find a demo.ks file in your project . 
     
-           
+### generate a certificate in your keystore
+
+A certificate should saved in a keystore file 
+
+but you can also export it to anywhere you like 
+
+* open your browser , and visit : http://localhost:2333/digital-sign-demo/demo/generateCert
+
+    if return msg is "generator done"
+    
+    your certificate file should be generated in your keysotre file . 
+    
+    in digital-sign-demo service , it was saved in demo.ks . 
+    
+              
             
             
