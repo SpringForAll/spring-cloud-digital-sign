@@ -37,6 +37,9 @@ public class KeyStorePattern {
 
     private String fcPassword;
 
+    public KeyStorePattern() {
+    }
+
     public KeyStorePattern(String keyStoreName, String keyStorePd, String fcName, String fcProvince, String fcCity, String fcCountry, String fcAlias, String fcPassword) {
         this.keyStoreName = keyStoreName;
         this.keyStorePd = keyStorePd;

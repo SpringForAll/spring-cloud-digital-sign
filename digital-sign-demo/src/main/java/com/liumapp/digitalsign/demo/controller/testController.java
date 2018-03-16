@@ -21,6 +21,11 @@ public class testController {
     @Autowired
     private HttpClientUtils httpClientUtils;
 
+    /**
+     * say hello
+     * to make sure the server's state is under running.
+     * @return String
+     */
     @RequestMapping("/keystore")
     public String testKeyStore () {
         try {
