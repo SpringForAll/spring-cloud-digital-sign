@@ -90,6 +90,7 @@ public class IndexController {
      * plz make sure you had keystore & certificate in it .
      * @return String
      */
+    @RequestMapping("/exportCert")
     public String exportCertificate () {
         try {
             HashMap<String , Object> urlParameters = new HashMap<String , Object>();
