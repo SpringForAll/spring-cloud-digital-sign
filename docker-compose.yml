@@ -20,13 +20,12 @@ services:
     hostname: sign-demo
     ports:
       - "8080:8080"
-      - "8000:8000"
     depends_on:
       - sign-eureka
       - config-server
     environment:
       SERVICE_REGISTRY_URL: http://sign-eureka:1234/eureka/
-      XDEBUG_CONFIG: agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000
+
 
   sign-eureka:
     image: liumapp/digital-sign-eureka:v1.0.0
