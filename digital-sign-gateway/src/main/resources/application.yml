@@ -17,7 +17,7 @@ zuul:
     pdf-worker:
       serviceId: pdf-worker
       path: /**
-    sign-demo:
+    digital-sign-demo:
       serviceId: sign-demo
       path: /**
 
