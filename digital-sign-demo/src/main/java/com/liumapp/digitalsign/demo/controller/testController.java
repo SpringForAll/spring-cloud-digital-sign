@@ -42,4 +42,9 @@ public class testController {
         }
     }
 
+    @RequestMapping("/hello")
+    public String hello () {
+        return "hello , this is " + testController.class;
+    }
+
 }
