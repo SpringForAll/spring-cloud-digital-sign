@@ -9,6 +9,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://sign-eureka:1234/eureka/
+
 zuul:
   routes:
     keystore-worker:
@@ -20,5 +21,21 @@ zuul:
     digital-sign-demo:
       serviceId: digital-sign-demo
       path: /**
+#  retryable: true
+#  ribbon-isolation-strategy: thread
+  host:
+    connect-timeout-millis: 600000
+    socket-timeout-millis: 600000
+
+ribbon:
+  ReadTimeOut: 600000
+  SocketTimeOut: 600000
+
+hystrix:
+  command:
+    default:
+      isolation:
+        thread:
+          timeoutInMilliseconds: 600000
 
 

@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  * home-page:http://www.liumapp.com
  */
 @EnableZuulProxy
-@SpringCloudApplication()
+@SpringCloudApplication
 public class Gateway {
 
     public static void main(String[] args) {
