@@ -21,21 +21,7 @@ zuul:
     digital-sign-demo:
       serviceId: digital-sign-demo
       path: /**
-#  retryable: true
-#  ribbon-isolation-strategy: thread
-  host:
-    connect-timeout-millis: 600000
-    socket-timeout-millis: 600000
 
 ribbon:
-  ReadTimeOut: 600000
-  SocketTimeOut: 600000
-
-hystrix:
-  command:
-    default:
-      isolation:
-        thread:
-          timeoutInMilliseconds: 600000
-
-
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
