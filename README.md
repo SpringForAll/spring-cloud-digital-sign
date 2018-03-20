@@ -71,6 +71,8 @@ but you can also export it to anywhere you like
     
     in digital-sign-demo service , it was saved in demo.ks . 
     
+### export a certificate file to folder
+
               
             
             

@@ -87,7 +87,10 @@ public class IndexController {
 
     /**
      * export certificate
+     * if you want export demo certificate
      * plz make sure you had keystore & certificate in it .
+     * if you want export demo-a certificate
+     * plz make sure you had run generateCert before .
      * @return String
      */
     @RequestMapping("/exportCert")
