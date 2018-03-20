@@ -39,19 +39,6 @@ public class AccessFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-//        RequestContext ctx = RequestContext.getCurrentContext();
-//        HttpServletRequest request = ctx.getRequest();
-//
-//        log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-//
-//        Object accessToken = request.getParameter("accessToken");
-//        if(accessToken == null) {
-//            log.warn("access token is empty");
-//            // or use ctx.setResponseBody(body) , that dependence on you
-//            ctx.setSendZuulResponse(false);
-//            ctx.setResponseStatusCode(401);
-//            return null;
-//        }
         log.info("this is access filter");
         return null;
     }

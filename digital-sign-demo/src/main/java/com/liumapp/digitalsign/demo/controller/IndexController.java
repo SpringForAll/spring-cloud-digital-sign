@@ -102,7 +102,7 @@ public class IndexController {
             urlParameters.put("alias" , "demo-a");//alias coming from generateCertificate
             urlParameters.put("certPd" , "123123123");//cert password coming form generateCertificate
             urlParameters.put("savePath" , certificateExportPath);
-            urlParameters.put("fileName" , "demo.cert");
+            urlParameters.put("fileName" , "demo-a.cert");
             BufferedReader reader = httpClientUtils.post("http://localhost:2333/keystore-worker/certificate/export" , urlParameters);
             StringBuffer result = new StringBuffer();
             String line = "";
