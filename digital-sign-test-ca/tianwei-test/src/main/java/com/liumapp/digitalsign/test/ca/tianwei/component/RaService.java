@@ -1,8 +1,13 @@
 package com.liumapp.digitalsign.test.ca.tianwei.component;
 
+import com.liumapp.digitalsign.test.ca.tianwei.cert.CertInfo;
 import com.liumapp.digitalsign.test.ca.tianwei.code.ErrorCode;
 import com.liumapp.digitalsign.test.ca.tianwei.proxy.UserAPIServicePortTypeProxy;
+import com.liumapp.digitalsign.test.ca.tianwei.query.QueryCertResult;
+import com.liumapp.digitalsign.test.ca.tianwei.user.AccountConfigResult;
 import com.liumapp.digitalsign.test.ca.tianwei.user.UserInfo;
+import com.liumapp.digitalsign.test.ca.tianwei.utils.AxisUtil;
+import com.liumapp.digitalsign.test.ca.tianwei.utils.DateUtil;
 import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -218,7 +223,7 @@ public class RaService {
      *            需要吊销的个人用户证书的序列号
      * @param certReqChallenge
      *            证书申请时的保护口令,若AA模式申请的证书则可传入传入空值
-     * @param certRevokeReason
+     * @param revokeReason
      *            吊销证书原因：可选值为：1：密钥遭受损害 2：停止使用,3：证书被替代,4：证书暂停使用,5：从属关系变动,0:未知、其他
      * @return JSONObject 返回结果信息
      * @throws JSONException

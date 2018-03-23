@@ -6,6 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * @author liumapp
+ * @file PropertiesUtil.java
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 3/23/18
+ */
 public class PropertiesUtil {
     static Properties properties;
 

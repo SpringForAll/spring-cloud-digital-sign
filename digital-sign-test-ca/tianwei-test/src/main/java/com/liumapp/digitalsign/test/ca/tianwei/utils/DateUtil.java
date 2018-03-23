@@ -4,6 +4,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author liumapp
+ * @file DateUtil.java
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 3/23/18
+ */
 public class DateUtil {
 
     public static String dateToString(Date date) {

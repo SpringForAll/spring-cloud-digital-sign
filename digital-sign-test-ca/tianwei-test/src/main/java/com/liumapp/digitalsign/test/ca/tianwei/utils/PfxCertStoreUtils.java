@@ -16,6 +16,13 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Random;
 
+/**
+ * @author liumapp
+ * @file PfxCertStoreUtils.java
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 3/23/18
+ */
 public class PfxCertStoreUtils {
     public KeyPair kp = null;
     public String password = "";

@@ -2,6 +2,13 @@ package com.liumapp.digitalsign.test.ca.tianwei.utils;
 
 import java.security.MessageDigest;
 
+/**
+ * @author liumapp
+ * @file MD5Util.java
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 3/23/18
+ */
 public class MD5Util {
     public final static String MD5Encrpytion(String source) {
 	char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };

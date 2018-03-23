@@ -8,6 +8,13 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+/**
+ * @author liumapp
+ * @file LicenseUtil.java
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 3/23/18
+ */
 public class LicenseUtil {
 
     private static LicenseUtil licenseUtil = new LicenseUtil();

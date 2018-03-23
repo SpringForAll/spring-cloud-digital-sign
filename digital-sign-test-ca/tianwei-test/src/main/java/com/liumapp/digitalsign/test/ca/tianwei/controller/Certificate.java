@@ -1,5 +1,6 @@
 package com.liumapp.digitalsign.test.ca.tianwei.controller;
 
+import com.liumapp.digitalsign.test.ca.tianwei.cert.CertInfo;
 import com.liumapp.digitalsign.test.ca.tianwei.component.RaService;
 import com.liumapp.digitalsign.test.ca.tianwei.user.UserInfo;
 import com.liumapp.digitalsign.test.ca.tianwei.utils.ServerPKCSUtil;
@@ -9,7 +10,9 @@ import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
