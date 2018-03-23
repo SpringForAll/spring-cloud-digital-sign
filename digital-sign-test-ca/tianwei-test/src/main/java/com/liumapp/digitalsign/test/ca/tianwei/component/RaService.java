@@ -1,5 +1,7 @@
 package com.liumapp.digitalsign.test.ca.tianwei.component;
 
+import com.liumapp.digitalsign.test.ca.tianwei.code.ErrorCode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +14,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RaService {
+
+    @Autowired
+    private ErrorCode errorCode;
 
     @Value("${cert.isKMC}")
     private String CERT_ISKMC;
@@ -31,5 +36,5 @@ public class RaService {
     @Value("${cert.validity}")
     private Integer CERT_VALIDITY = 365;
 
-
+       
 }
