@@ -37,6 +37,9 @@ public class RaService {
     private Integer CERT_VALIDITY = 365;
 
     public String enrollCert () {
+
+
+
         return "success";
     }
 }

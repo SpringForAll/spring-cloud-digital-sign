@@ -43,8 +43,8 @@ public class ServerPKCSUtil {
     /***
      * genCsr
      *
-     * @param alg
-     *            密钥算法
+     * @param alg0 alg
+     * 密钥算法
      * @return
      */
     public static String genCsr(String alg0) {
