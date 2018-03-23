@@ -8,12 +8,12 @@
     <version>v1.0.0</version>
   </parent>
 
-  <groupId>com.liumapp.digitalsign.test.ca.demoapib</groupId>
-  <artifactId>demo-api-b</artifactId>
+  <groupId>com.liumapp.digitalsign.test.ca.tianwei</groupId>
+  <artifactId>tianwei-test</artifactId>
   <version>v1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>demo-api-b</name>
+  <name>tianwei-test</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>

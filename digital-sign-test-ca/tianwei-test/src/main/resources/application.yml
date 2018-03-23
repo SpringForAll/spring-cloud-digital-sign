@@ -1,15 +1,15 @@
 spring:
   application:
-    name: demo-api-b
+    name: tianwei-test
   cloud:
     config:
       discovery:
         enabled: true
-        serviceId: your_eureka_serviceId
+        serviceId: digital-sign-config-server
       profile: dev
       label: master
 server:
-  port: 8082
+  port: 9090
 eureka:
   client:
     service-url:

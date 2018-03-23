@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.test.ca.demoapib.controller;
+package com.liumapp.digitalsign.test.ca.tianwei.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ public class IndexController {
 
     @RequestMapping("")
     public String index () {
-        return "hello , this is demo api b";
+        return "hello , this is demo api a";
     }
 
 }
