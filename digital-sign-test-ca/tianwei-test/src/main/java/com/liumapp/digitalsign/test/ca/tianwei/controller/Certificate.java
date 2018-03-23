@@ -36,7 +36,7 @@ public class Certificate {
 
     @RequestMapping("/")
     public String begin () {
-/** 服务端生成证书,并保存成Pfx文件格式 **/
+        /** 服务端生成证书,并保存成Pfx文件格式 **/
         String userName = "测试公司";
         String userEmail = "test@szitrus.com.cn";
         /** 扩展字段是针对证书做扩展，即在证书的属性内增加如下内容，详细请联系天威诚信技术做解答 **/
