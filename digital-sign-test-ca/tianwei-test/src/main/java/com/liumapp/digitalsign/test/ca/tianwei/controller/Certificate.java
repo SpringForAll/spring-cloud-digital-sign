@@ -1,8 +1,12 @@
 package com.liumapp.digitalsign.test.ca.tianwei.controller;
 
+import cn.topca.api.cert.CertApiException;
+import cn.topca.api.cert.CertStore;
+import cn.topca.api.cert.TCA;
 import com.liumapp.digitalsign.test.ca.tianwei.cert.CertInfo;
 import com.liumapp.digitalsign.test.ca.tianwei.component.RaService;
 import com.liumapp.digitalsign.test.ca.tianwei.user.UserInfo;
+import com.liumapp.digitalsign.test.ca.tianwei.utils.LicenseUtil;
 import com.liumapp.digitalsign.test.ca.tianwei.utils.ServerPKCSUtil;
 import org.bouncycastle.util.encoders.Base64;
 import org.json.JSONException;
@@ -34,6 +38,10 @@ public class Certificate {
     @Autowired
     private RaService raService;
 
+    /**
+     * 直接生成pfx证书文件
+     * @return
+     */
     @RequestMapping("/")
     public String begin () {
         /** 服务端生成证书,并保存成Pfx文件格式 **/
@@ -100,5 +108,76 @@ public class Certificate {
         }
         return "success";
     }
+
+    @RequestMapping("/jks")
+    public String installIntoJKS () {
+        /** 服务端生成证书,并保存成Pfx文件格式 **/
+        String userName = "test_ca_002";
+        String userEmail = "test@szitrus.com.cn";
+        /** 扩展字段是针对证书做扩展，即在证书的属性内增加如下内容，详细请联系天威诚信技术做解答 **/
+        // String userAdditionalField1 = "";
+        // String userAdditionalField2 = "";
+        // String userAdditionalField3 = "";
+        // String userAdditionalField4 = "";
+        // String userAdditionalField5 = "";
+        // String userAdditionalField6 = "";
+        // String userAdditionalField7 = "";
+        // String userAdditionalField8 = "";
+        // String userAdditionalField9 = "";
+        // String userAdditionalField10 = "";
+
+        RaService raService = new RaService();
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserName(userName); // 证书名称
+        userInfo.setUserEmail(userEmail); // 证书所有者Email
+        // userInfo.setUserAdditionalField1(userAdditionalField1); // 扩展字段1
+        // userInfo.setUserAdditionalField2(userAdditionalField2); // 扩展字段2
+        // userInfo.setUserAdditionalField3(userAdditionalField3); // 扩展字段3
+        // userInfo.setUserAdditionalField4(userAdditionalField4); // 扩展字段4
+        // userInfo.setUserAdditionalField5(userAdditionalField5); // 扩展字段5
+        // userInfo.setUserAdditionalField6(userAdditionalField6); // 扩展字段6
+        // userInfo.setUserAdditionalField7(userAdditionalField7); // 扩展字段7
+        // userInfo.setUserAdditionalField8(userAdditionalField8); // 扩展字段8
+        // userInfo.setUserAdditionalField9(userAdditionalField9); // 扩展字段9
+        // userInfo.setUserAdditionalField10(userAdditionalField10); // 扩展字段10
+
+
+        /** 调用接口制作证书 **/
+        String passCode = "";
+        Integer certValidity = 0;// 不设置证书有效期，默认读取services.properties的属性值
+        JSONObject jsonObject = new JSONObject();
+        try {
+            LicenseUtil.init();
+
+            /** 产生CSR(证书请求 即 p10) **/
+            String certReqBuf = "";
+            String csrType = "SM2";
+            String keystore = "server";// keystore的alias名称
+            if (csrType.equalsIgnoreCase("RSA1024")) {
+                certReqBuf = CertStore.byName(keystore).genCsr(TCA.RSA1024).toBase64();
+            } else if (csrType.equalsIgnoreCase("RSA2048")) {
+                certReqBuf = CertStore.byName(keystore).genCsr(TCA.RSA2048).toBase64();
+            } else {
+                certReqBuf = CertStore.byName(keystore).genCsr(TCA.SM2).toBase64();
+            }
+            jsonObject = raService.enrollCertAA(userInfo, certReqBuf, passCode, certValidity);
+            CertInfo certInfo = new CertInfo();
+            if (jsonObject.get("certInfo") != null) {
+                certInfo = (CertInfo) jsonObject.get("certInfo");
+            }
+            CertStore.installCert(certInfo.getCertSignBuf());// 安装证书
+            System.out.println("当前申请的证书序列号是：[" + certInfo.getCertSerialNumber() + "]");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (CertApiException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "success";
+    }
+
+
+
 
 }
