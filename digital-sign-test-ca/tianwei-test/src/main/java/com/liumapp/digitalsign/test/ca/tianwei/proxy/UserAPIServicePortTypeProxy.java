@@ -7,9 +7,9 @@ package com.liumapp.digitalsign.test.ca.tianwei.proxy;
  * @homepage http://www.liumapp.com
  * @date 3/23/18
  */
-public class UserAPIServicePortTypeProxy implements cn.topca.tca.ra.service.UserAPIServicePortType {
+public class UserAPIServicePortTypeProxy implements UserAPIServicePortTypeProxy {
     private String _endpoint = null;
-    private cn.topca.tca.ra.service.UserAPIServicePortType userAPIServicePortType = null;
+    private UserAPIServicePortTypeProxy userAPIServicePortType = null;
 
     public UserAPIServicePortTypeProxy() {
         _initUserAPIServicePortTypeProxy();
@@ -45,7 +45,7 @@ public class UserAPIServicePortTypeProxy implements cn.topca.tca.ra.service.User
 
     }
 
-    public cn.topca.tca.ra.service.UserAPIServicePortType getUserAPIServicePortType() {
+    public UserAPIServicePortTypeProxy getUserAPIServicePortType() {
         if (userAPIServicePortType == null)
             _initUserAPIServicePortTypeProxy();
         return userAPIServicePortType;
