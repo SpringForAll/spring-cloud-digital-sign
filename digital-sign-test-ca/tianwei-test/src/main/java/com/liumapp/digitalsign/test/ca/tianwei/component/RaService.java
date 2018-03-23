@@ -1,6 +1,7 @@
 package com.liumapp.digitalsign.test.ca.tianwei.component;
 
 import com.liumapp.digitalsign.test.ca.tianwei.code.ErrorCode;
+import com.liumapp.digitalsign.test.ca.tianwei.proxy.UserAPIServicePortTypeProxy;
 import com.liumapp.digitalsign.test.ca.tianwei.user.UserInfo;
 import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
@@ -56,25 +57,24 @@ public class RaService {
      * @return CertInfo 返回签发的证书信息
      * @throws JSONException
      */
-
     public JSONObject enrollCert(UserInfo userInfo, String certReqBuf, String passCode, Integer certValidity) throws JSONException {
         JSONObject ret = new JSONObject();
         String json = "";
         // 用户名不能为空
         if (StringUtils.isEmpty(userInfo.getUserName())) {
             ret.put("code", "10010101");
-            ret.put("msg", errorProUtil.getProperty("10010101"));
+            ret.put("msg", errorCode.getErrorCode().get(10010101));
             return ret;
         }
         // 用户邮箱不能为空
         if (StringUtils.isEmpty(userInfo.getUserEmail())) {
             ret.put("code", "10010102");
-            ret.put("msg", errorProUtil.getProperty("10010102"));
+            ret.put("msg", errorCode.getErrorCode().get(10010102));
             return ret;
         }
         if (StringUtils.isEmpty(certReqBuf)) {
             ret.put("code", "10010103");
-            ret.put("msg", errorProUtil.getProperty("10010103"));
+            ret.put("msg", errorCode.getErrorCode().get(10010103));
             return ret;
         }
         // 有效期为空
@@ -92,7 +92,7 @@ public class RaService {
 
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -122,19 +122,19 @@ public class RaService {
         // 用户名不能为空
         if (StringUtils.isEmpty(userInfo.getUserName())) {
             ret.put("code", "10010101");
-            ret.put("msg", errorProUtil.getProperty("10010101"));
+            ret.put("msg", errorCode.getErrorCode().get(10010101));
             return ret;
         }
         // 用户邮箱不能为空
         if (StringUtils.isEmpty(userInfo.getUserEmail())) {
             ret.put("code", "10010102");
-            ret.put("msg", errorProUtil.getProperty("10010102"));
+            ret.put("msg", errorCode.getErrorCode().get(10010102));
             return ret;
         }
 
         if (StringUtils.isEmpty(certReqBuf)) {
             ret.put("code", "10010103");
-            ret.put("msg", errorProUtil.getProperty("10010103"));
+            ret.put("msg", errorCode.getErrorCode().get(10010103));
             return ret;
         }
         // 有效期为空
@@ -158,7 +158,7 @@ public class RaService {
             }
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -182,13 +182,13 @@ public class RaService {
         String json = "";
         if (StringUtils.isBlank(pinCode)) {
             ret.put("code", "10010105");
-            ret.put("msg", errorProUtil.getProperty("10010105"));
+            ret.put("msg", errorCode.getErrorCode().get("10010105"));
             return ret;
         }
 
         if (StringUtils.isBlank(certReqBuf)) {
             ret.put("code", "10010103");
-            ret.put("msg", errorProUtil.getProperty("10010103"));
+            ret.put("msg", errorCode.getErrorCode().get(10010103));
             return ret;
         }
 
@@ -203,7 +203,7 @@ public class RaService {
             ret.put("msg", "");
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -255,7 +255,7 @@ public class RaService {
 
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
         }
         return ret;
     }
@@ -280,12 +280,12 @@ public class RaService {
         JSONObject ret = new JSONObject();
         if (null == certInfo.getCertReqBuf() || certInfo.getCertReqBuf().equals("")) {
             ret.put("code", "30010101");
-            ret.put("msg", errorProUtil.getProperty("30010101"));
+            ret.put("msg", errorCode.getErrorCode().get(30010101));
             return ret;
         }
         if (null == certInfo.getCertSignBuf() && certInfo.getCertSignBuf().equals("")) {
             ret.put("code", "30010102");
-            ret.put("msg", errorProUtil.getProperty("30010102"));
+            ret.put("msg", errorCode.getErrorCode().get(30010102));
             return ret;
         }
         String json = "";
@@ -294,7 +294,7 @@ public class RaService {
             if ("passCodeModel".equals(CERT_RENEW_MODEL)) {// passcode模式
                 if (passCode == null || passCode.trim().length() == 0) {
                     ret.put("code", "10010104");
-                    ret.put("code", errorProUtil.getProperty("10010104"));
+                    ret.put("code", errorCode.getErrorCode().get(10010104));
                     return ret;
                 }
                 json = "{'PKCSINFORMATION':'" + csrSignedData + "','CERT_REQ_BUF':'" + certInfo.getCertReqBuf() + "','certValidity':'" + certValidity + "'}";
@@ -317,7 +317,7 @@ public class RaService {
             }
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
         }
         return ret;
     }
@@ -337,7 +337,7 @@ public class RaService {
         String json = "";
         if (StringUtils.isBlank(serialNumber)) {
             ret.put("code", "10010106");
-            ret.put("msg", errorProUtil.getProperty("10010106"));
+            ret.put("msg", errorCode.getErrorCode().get(10010106));
             return ret;
         }
         try {
@@ -351,7 +351,7 @@ public class RaService {
             ret.put("msg", "");
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -372,7 +372,7 @@ public class RaService {
         String json = "";
         if (StringUtils.isBlank(serialNumber)) {
             ret.put("code", "10010106");
-            ret.put("msg", errorProUtil.getProperty("10010106"));
+            ret.put("msg", errorCode.getErrorCode().get(10010106));
             return ret;
         }
         try {
@@ -385,7 +385,7 @@ public class RaService {
             ret.put("msg", "");
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -406,7 +406,7 @@ public class RaService {
         String json = "";
         if (StringUtils.isBlank(serialNumber)) {
             ret.put("code", "10010106");
-            ret.put("msg", errorProUtil.getProperty("10010106"));
+            ret.put("msg", errorCode.getErrorCode().get(10010106));
             return ret;
         }
         try {
@@ -420,7 +420,7 @@ public class RaService {
             ret.put("result", result);
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -441,7 +441,7 @@ public class RaService {
         String json = "";
         if (certId == 0) {
             ret.put("code", "10010107");
-            ret.put("msg", errorProUtil.getProperty("10010107"));
+            ret.put("msg", errorCode.getErrorCode().get(10010107));
             return ret;
         }
         try {
@@ -455,7 +455,7 @@ public class RaService {
             ret.put("result", result);
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -519,7 +519,7 @@ public class RaService {
             ret.put("result", ca);
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -543,7 +543,7 @@ public class RaService {
             ret.put("result", caCrl);
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -567,7 +567,7 @@ public class RaService {
             ret.put("result", deltaCRL);
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -588,7 +588,7 @@ public class RaService {
             ret.put("result", result);
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
@@ -612,7 +612,7 @@ public class RaService {
             ret.put("result", result);
         } catch (Exception e) {
             ret.put("code", "20010101");
-            ret.put("msg", errorProUtil.getProperty("20010101") + ":" + e.getMessage());
+            ret.put("msg", errorCode.getErrorCode().get(20010101) + ":" + e.getMessage());
             return ret;
         }
         return ret;
