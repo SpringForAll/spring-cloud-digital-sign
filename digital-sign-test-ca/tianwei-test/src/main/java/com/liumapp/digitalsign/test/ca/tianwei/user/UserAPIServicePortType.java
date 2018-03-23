@@ -1,6 +1,9 @@
 package com.liumapp.digitalsign.test.ca.tianwei.user;
 
+import com.liumapp.digitalsign.test.ca.tianwei.query.QueryCertResult;
+
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 /**
  * @author liumapp
@@ -11,35 +14,35 @@ import java.rmi.Remote;
  */
 public interface UserAPIServicePortType extends Remote {
 
-    public cn.topca.tca.ra.service.QueryCertResult queryCertByCertId(int certId, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public QueryCertResult queryCertByCertId(int certId, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public java.lang.String downloadCRL(java.lang.String accountHash) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public String downloadCRL(String accountHash) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public void unsuspendCert(java.lang.String serialNumber, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public void unsuspendCert(String serialNumber, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public void enrollCert(cn.topca.tca.ra.service.UserInfo userInfo, java.lang.String certReqBuf, java.lang.String certReqChallenge, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public void enrollCert(cn.topca.tca.ra.service.UserInfo userInfo, String certReqBuf, String certReqChallenge, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public cn.topca.tca.ra.service.QueryCertResult queryCerts(cn.topca.tca.ra.service.UserInfo userInfo, cn.topca.tca.ra.service.CertInfo certInfo, int pageIndex, int pageSize, java.lang.String sqlTemplateFileName, java.lang.String nextResultTag, java.lang.String totalTag, java.lang.String accountHash) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public QueryCertResult queryCerts(cn.topca.tca.ra.service.UserInfo userInfo, cn.topca.tca.ra.service.CertInfo certInfo, int pageIndex, int pageSize, String sqlTemplateFileName, String nextResultTag, String totalTag, String accountHash) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public cn.topca.tca.ra.service.CertInfo renewCertAA(cn.topca.tca.ra.service.UserInfo userInfo, cn.topca.tca.ra.service.CertInfo origin, java.lang.String accountHash, java.lang.String aaCheckPoint, java.lang.String passCode, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public cn.topca.tca.ra.service.CertInfo renewCertAA(cn.topca.tca.ra.service.UserInfo userInfo, cn.topca.tca.ra.service.CertInfo origin, String accountHash, String aaCheckPoint, String passCode, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public java.lang.String downloadDeltaCRL(java.lang.String accountHash) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public String downloadDeltaCRL(String accountHash) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public java.lang.String downloadCA(java.lang.String accountHash) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public String downloadCA(String accountHash) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public java.lang.String doScript(java.lang.String scriptName, java.lang.String jsonMap) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public String doScript(String scriptName, String jsonMap) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public cn.topca.tca.ra.service.AccountConfigResult synchroTemplate(java.lang.String accountHash) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public cn.topca.tca.ra.service.AccountConfigResult synchroTemplate(String accountHash) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public cn.topca.tca.ra.service.QueryCertResult queryCertBySerialNumber(java.lang.String serialNumber, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public QueryCertResult queryCertBySerialNumber(String serialNumber, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public cn.topca.tca.ra.service.CertInfo pickupCert(java.lang.String certPin, java.lang.String certReqChallenge, java.lang.String certReqBuf, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public cn.topca.tca.ra.service.CertInfo pickupCert(String certPin, String certReqChallenge, String certReqBuf, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public void revokeCert(java.lang.String serialNumber, java.lang.String certReqChallenge, java.lang.String certRevokeReason, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public void revokeCert(String serialNumber, String certReqChallenge, String certRevokeReason, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public void renewCert(cn.topca.tca.ra.service.UserInfo userInfo, cn.topca.tca.ra.service.CertInfo origin, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public void renewCert(cn.topca.tca.ra.service.UserInfo userInfo, cn.topca.tca.ra.service.CertInfo origin, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public void suspendCert(java.lang.String serialNumber, java.lang.String accountHash, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public void suspendCert(String serialNumber, String accountHash, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 
-    public cn.topca.tca.ra.service.CertInfo enrollCertAA(cn.topca.tca.ra.service.UserInfo userInfo, java.lang.String certReqBuf, java.lang.String accountHash, java.lang.String aaCheckPoint, java.lang.String passCode, java.lang.String json) throws java.rmi.RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
+    public cn.topca.tca.ra.service.CertInfo enrollCertAA(cn.topca.tca.ra.service.UserInfo userInfo, String certReqBuf, String accountHash, String aaCheckPoint, String passCode, String json) throws RemoteException, cn.topca.tca.ra.service.RaServiceUnavailable;
 }
