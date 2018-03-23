@@ -7,6 +7,8 @@ import com.liumapp.digitalsign.test.ca.tianwei.utils.ServerPKCSUtil;
 import org.bouncycastle.util.encoders.Base64;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +28,12 @@ import java.io.IOException;
 @RequestMapping("cert")
 public class Certificate {
 
+    @Value("${custome.savepath}")
+    private String savePath;
+
+    @Autowired
+    private RaService raService;
+
     @RequestMapping("/")
     public String begin () {
 /** 服务端生成证书,并保存成Pfx文件格式 **/
@@ -43,7 +51,6 @@ public class Certificate {
         // String userAdditionalField9 = "";
         // String userAdditionalField10 = "";
 
-        RaService raService = new RaService();
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(userName); // 证书名称
         userInfo.setUserEmail(userEmail); // 证书所有者Email
@@ -80,7 +87,7 @@ public class Certificate {
             String pkcs12Cert = serverPKCSUtil.genP12(password, certSignBufP7);
             System.out.println(pkcs12Cert);
             /** 将pkcs12 格式证书写到pfx文件中 **/
-            String pfxPath = "D:\\" + certInfo.getCertSerialNumber() + ".pfx";
+            String pfxPath = savePath + certInfo.getCertSerialNumber() + ".pfx";
             FileOutputStream fileOutputStream = new FileOutputStream(new File(pfxPath));
             fileOutputStream.write(Base64.decode(pkcs12Cert));
             fileOutputStream.close();

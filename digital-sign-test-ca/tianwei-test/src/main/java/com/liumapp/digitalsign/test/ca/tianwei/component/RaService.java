@@ -28,6 +28,9 @@ public class RaService {
     @Autowired
     private ErrorCode errorCode;
 
+    @Autowired
+    private AxisUtil axisUtil;
+
     @Value("${cert.isKMC}")
     private String CERT_ISKMC;
 
@@ -90,7 +93,7 @@ public class RaService {
             if (CERT_ISKMC != null) {
                 json = "{'certKmcReq2':'" + (CERT_ISKMC.equals("false") ? "" : "kmcClientVersion=20150130") + "','certValidity':'" + certValidity + "'}";
             }
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             proxy.enrollCert(userInfo, certReqBuf, ACCOUNT_HASH, CERT_REQ_CHALLENGE, json);
             ret.put("code", "0");
             ret.put("msg", "PassCode模式申请证书成功,请等待管理员批准......");
@@ -151,7 +154,7 @@ public class RaService {
                 json = "{'certKmcReq2':'" + (CERT_ISKMC.equals("false") ? "" : "kmcClientVersion=20150130") + "','certValidity':'" + certValidity + "'}";
             }
 
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             certInfo = proxy.enrollCertAA(userInfo, certReqBuf, ACCOUNT_HASH, CERT_REQ_CHALLENGE, passCode, json);
             if (CERT_ENROLL_MODEL.equals("AA")) {
                 ret.put("code", "0");
@@ -201,7 +204,7 @@ public class RaService {
             if (CERT_ISKMC != null) {
                 json = "{'certKmcReq2':'" + (CERT_ISKMC.equals("false") ? "" : "kmcClientVersion=20150130") + "','certValidity':'" + CERT_REQ_CHALLENGE + "'}";
             }
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             CertInfo certInfo = proxy.pickupCert(pinCode, CERT_REQ_CHALLENGE, certReqBuf, ACCOUNT_HASH, json);
             ret.put("certInfo", certInfo);
             ret.put("code", "0");
@@ -234,7 +237,7 @@ public class RaService {
             String json = "";
             String certRevokeReasonStr = null;
 
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
 
             if ("1".equals(revokeReason)) {
                 certRevokeReasonStr = "Key compromise[密钥遭受损害]";
@@ -295,7 +298,7 @@ public class RaService {
         }
         String json = "";
         try {
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             if ("passCodeModel".equals(CERT_RENEW_MODEL)) {// passcode模式
                 if (passCode == null || passCode.trim().length() == 0) {
                     ret.put("code", "10010104");
@@ -350,7 +353,7 @@ public class RaService {
                 json = "{'certKmcReq2':'" + (CERT_ISKMC.equals("false") ? "" : "kmcClientVersion=20150130") + "','certValidity':'" + CERT_REQ_CHALLENGE + "'}";
             }
 
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             proxy.suspendCert(serialNumber, ACCOUNT_HASH, json);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -384,7 +387,7 @@ public class RaService {
             if (CERT_ISKMC != null) {
                 json = "{'certKmcReq2':'" + (CERT_ISKMC.equals("false") ? "" : "kmcClientVersion=20150130") + "','certValidity':'" + CERT_REQ_CHALLENGE + "'}";
             }
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             proxy.unsuspendCert(serialNumber, ACCOUNT_HASH, json);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -418,7 +421,7 @@ public class RaService {
             if (CERT_ISKMC != null) {
                 json = "{'certKmcReq2':'" + (CERT_ISKMC.equals("false") ? "" : "kmcClientVersion=20150130") + "','certValidity':'" + CERT_REQ_CHALLENGE + "'}";
             }
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             QueryCertResult result = proxy.queryCertBySerialNumber(serialNumber, ACCOUNT_HASH, json);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -453,7 +456,7 @@ public class RaService {
             if (CERT_ISKMC != null) {
                 json = "{'certKmcReq2':'" + (CERT_ISKMC.equals("false") ? "" : "kmcClientVersion=20150130") + "','certValidity':'" + CERT_REQ_CHALLENGE + "'}";
             }
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             QueryCertResult result = proxy.queryCertByCertId(certId, ACCOUNT_HASH, json);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -482,7 +485,7 @@ public class RaService {
      */
     public QueryCertResult queryCerts(UserInfo userInfo, CertInfo certInfo, int currentPage, int pageSize) {
         try {
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             if (null != certInfo.getCertSerialNumber() && !"".equals(certInfo.getCertSerialNumber())) {
                 QueryCertResult quertResult = proxy.queryCertBySerialNumber(certInfo.getCertSerialNumber().trim(), ACCOUNT_HASH.toString().trim(), null);
                 return quertResult;
@@ -517,7 +520,7 @@ public class RaService {
     public JSONObject downloadCA() throws JSONException {
         JSONObject ret = new JSONObject();
         try {
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             String ca = proxy.downloadCA(ACCOUNT_HASH);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -541,7 +544,7 @@ public class RaService {
     public JSONObject downloadCACrl() throws JSONException {
         JSONObject ret = new JSONObject();
         try {
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             String caCrl = proxy.downloadCRL(ACCOUNT_HASH);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -565,7 +568,7 @@ public class RaService {
     public JSONObject downloadDeltaCRL() throws JSONException {
         JSONObject ret = new JSONObject();
         try {
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             String deltaCRL = proxy.downloadDeltaCRL(ACCOUNT_HASH);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -586,7 +589,7 @@ public class RaService {
     public JSONObject doScript(String scriptName, String jsonMap) throws JSONException {
         JSONObject ret = new JSONObject();
         try {
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             String result = proxy.doScript(scriptName, jsonMap);
             ret.put("code", "0");
             ret.put("msg", "");
@@ -610,7 +613,7 @@ public class RaService {
     public JSONObject synchroTemplate() throws JSONException {
         JSONObject ret = new JSONObject();
         try {
-            UserAPIServicePortTypeProxy proxy = AxisUtil.getProxy();
+            UserAPIServicePortTypeProxy proxy = axisUtil.getProxyNow();
             AccountConfigResult result = proxy.synchroTemplate(ACCOUNT_HASH);
             ret.put("code", "0");
             ret.put("msg", "");

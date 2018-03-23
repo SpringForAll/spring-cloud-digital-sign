@@ -1,13 +1,14 @@
 package com.liumapp.digitalsign.test.ca.tianwei.user;
 
+import java.io.Serializable;
+
 /**
  * UserInfo.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
-
-public class UserInfo implements java.io.Serializable {
+public class UserInfo implements Serializable {
     private int accountId;
 
     private java.lang.String userName;
