@@ -8,13 +8,10 @@
 		<version>1.5.6.RELEASE</version>
 	</parent>
 
-	<groupId>com.liumapp.digitalsign</groupId>
-	<artifactId>spring-cloud-digital-sign</artifactId>
+	<groupId>com.liumapp.digitalsign.test.ca</groupId>
+	<artifactId>digital-sign-test-ca</artifactId>
 	<version>v1.0.0</version>
 	<packaging>pom</packaging>
-
-	<name>spring-cloud-digital-sign</name>
-	<url>http://www.liumapp.com</url>
 
 	<properties>
 		<spring-cloud.version>Dalston.SR2</spring-cloud.version>
@@ -32,16 +29,6 @@
 		</developer>
 	</developers>
 
-	<modules>
-		<module>digital-sign-engine</module>
-		<module>digital-sign-service</module>
-		<module>digital-sign-eureka</module>
-		<module>digital-sign-gateway</module>
-    	<module>digital-sign-config-server</module>
-    	<module>digital-sign-demo</module>
-    <module>digital-sign-test-ca</module>
-  </modules>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -53,4 +40,8 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+  <modules>
+    <module>demo-api-a</module>
+    <module>demo-api-b</module>
+  </modules>
 </project>
