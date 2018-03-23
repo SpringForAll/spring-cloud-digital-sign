@@ -6,7 +6,6 @@ package com.liumapp.digitalsign.test.ca.tianwei.cert;
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
-
 public class CertInfo  implements java.io.Serializable {
 
     private java.lang.String certStatus;

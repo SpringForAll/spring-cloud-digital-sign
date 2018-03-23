@@ -1,6 +1,9 @@
 package com.liumapp.digitalsign.test.ca.tianwei.query;
 
 
+import com.liumapp.digitalsign.test.ca.tianwei.cert.CertInfo;
+import com.liumapp.digitalsign.test.ca.tianwei.user.UserInfo;
+
 import java.io.Serializable;
 
 /**
@@ -13,17 +16,17 @@ import java.io.Serializable;
 public class QueryCertResult  implements Serializable {
     private int totalSize;
 
-    private cn.topca.tca.ra.service.CertInfo[] certInfos;
+    private CertInfo[] certInfos;
 
-    private cn.topca.tca.ra.service.UserInfo[] userInfos;
+    private UserInfo[] userInfos;
 
     public QueryCertResult() {
     }
 
     public QueryCertResult(
             int totalSize,
-            cn.topca.tca.ra.service.CertInfo[] certInfos,
-            cn.topca.tca.ra.service.UserInfo[] userInfos) {
+            CertInfo[] certInfos,
+            UserInfo[] userInfos) {
         this.totalSize = totalSize;
         this.certInfos = certInfos;
         this.userInfos = userInfos;
@@ -55,7 +58,7 @@ public class QueryCertResult  implements Serializable {
      *
      * @return certInfos
      */
-    public cn.topca.tca.ra.service.CertInfo[] getCertInfos() {
+    public CertInfo[] getCertInfos() {
         return certInfos;
     }
 
@@ -65,15 +68,15 @@ public class QueryCertResult  implements Serializable {
      *
      * @param certInfos
      */
-    public void setCertInfos(cn.topca.tca.ra.service.CertInfo[] certInfos) {
+    public void setCertInfos(CertInfo[] certInfos) {
         this.certInfos = certInfos;
     }
 
-    public cn.topca.tca.ra.service.CertInfo getCertInfos(int i) {
+    public CertInfo getCertInfos(int i) {
         return this.certInfos[i];
     }
 
-    public void setCertInfos(int i, cn.topca.tca.ra.service.CertInfo _value) {
+    public void setCertInfos(int i, CertInfo _value) {
         this.certInfos[i] = _value;
     }
 
@@ -83,7 +86,7 @@ public class QueryCertResult  implements Serializable {
      *
      * @return userInfos
      */
-    public cn.topca.tca.ra.service.UserInfo[] getUserInfos() {
+    public UserInfo[] getUserInfos() {
         return userInfos;
     }
 
@@ -93,15 +96,15 @@ public class QueryCertResult  implements Serializable {
      *
      * @param userInfos
      */
-    public void setUserInfos(cn.topca.tca.ra.service.UserInfo[] userInfos) {
+    public void setUserInfos(UserInfo[] userInfos) {
         this.userInfos = userInfos;
     }
 
-    public cn.topca.tca.ra.service.UserInfo getUserInfos(int i) {
+    public UserInfo getUserInfos(int i) {
         return this.userInfos[i];
     }
 
-    public void setUserInfos(int i, cn.topca.tca.ra.service.UserInfo _value) {
+    public void setUserInfos(int i, UserInfo _value) {
         this.userInfos[i] = _value;
     }
 
