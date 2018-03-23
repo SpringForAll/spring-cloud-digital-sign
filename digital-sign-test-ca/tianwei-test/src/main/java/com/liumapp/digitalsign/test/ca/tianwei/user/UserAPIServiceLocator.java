@@ -57,7 +57,7 @@ public class UserAPIServiceLocator extends Service implements UserAPIService {
 
     public UserAPIServicePortType getUserAPIServicePort(java.net.URL portAddress) throws ServiceException {
         try {
-            cn.topca.tca.ra.service.UserAPIServiceSoapBindingStub _stub = new cn.topca.tca.ra.service.UserAPIServiceSoapBindingStub(portAddress, this);
+            UserAPIServiceSoapBindingStub _stub = new UserAPIServiceSoapBindingStub(portAddress, this);
             _stub.setPortName(getUserAPIServicePortWSDDServiceName());
             return _stub;
         }
@@ -78,7 +78,7 @@ public class UserAPIServiceLocator extends Service implements UserAPIService {
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws ServiceException {
         try {
             if (UserAPIServicePortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                cn.topca.tca.ra.service.UserAPIServiceSoapBindingStub _stub = new cn.topca.tca.ra.service.UserAPIServiceSoapBindingStub(new java.net.URL(UserAPIServicePort_address), this);
+                UserAPIServiceSoapBindingStub _stub = new UserAPIServiceSoapBindingStub(new java.net.URL(UserAPIServicePort_address), this);
                 _stub.setPortName(getUserAPIServicePortWSDDServiceName());
                 return _stub;
             }
