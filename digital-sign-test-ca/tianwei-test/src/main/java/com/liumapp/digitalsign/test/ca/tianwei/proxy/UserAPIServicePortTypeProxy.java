@@ -1,5 +1,7 @@
 package com.liumapp.digitalsign.test.ca.tianwei.proxy;
 
+import com.liumapp.digitalsign.test.ca.tianwei.user.UserAPIServicePortType;
+
 /**
  * @author liumapp
  * @file UserAPIServicePortTypeProxy.java
@@ -7,7 +9,7 @@ package com.liumapp.digitalsign.test.ca.tianwei.proxy;
  * @homepage http://www.liumapp.com
  * @date 3/23/18
  */
-public class UserAPIServicePortTypeProxy implements UserAPIServicePortTypeProxy {
+public class UserAPIServicePortTypeProxy implements UserAPIServicePortType {
     private String _endpoint = null;
     private UserAPIServicePortTypeProxy userAPIServicePortType = null;
 
