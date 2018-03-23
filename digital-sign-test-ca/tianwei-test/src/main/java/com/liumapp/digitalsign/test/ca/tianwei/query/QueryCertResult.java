@@ -1,7 +1,16 @@
 package com.liumapp.digitalsign.test.ca.tianwei.query;
 
 
-public class QueryCertResult  implements java.io.Serializable {
+import java.io.Serializable;
+
+/**
+ * @author liumapp
+ * @file QueryCertResult.java
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 3/23/18
+ */
+public class QueryCertResult  implements Serializable {
     private int totalSize;
 
     private cn.topca.tca.ra.service.CertInfo[] certInfos;
