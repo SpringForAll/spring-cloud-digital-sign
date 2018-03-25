@@ -126,7 +126,6 @@ public class Certificate {
         // String userAdditionalField9 = "";
         // String userAdditionalField10 = "";
 
-        RaService raService = new RaService();
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(userName); // 证书名称
         userInfo.setUserEmail(userEmail); // 证书所有者Email
@@ -181,3 +180,4 @@ public class Certificate {
 
 
 }
+
