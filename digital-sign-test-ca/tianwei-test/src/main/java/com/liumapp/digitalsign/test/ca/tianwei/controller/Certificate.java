@@ -152,7 +152,7 @@ public class Certificate {
 
             /** 产生CSR(证书请求 即 p10) **/
             String certReqBuf = "";
-            String csrType = "SM2";
+            String csrType = "RSA1024";
             String keystore = "demo.ks";// keystore的alias名称
             if (csrType.equalsIgnoreCase("RSA1024")) {
                 certReqBuf = CertStore.byName(keystore).genCsr(TCA.RSA1024).toBase64();
