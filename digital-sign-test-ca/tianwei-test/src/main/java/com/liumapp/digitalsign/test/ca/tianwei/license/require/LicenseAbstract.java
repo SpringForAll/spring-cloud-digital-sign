@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * @author liumapp
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @homepage http://www.liumapp.com
  * @date 3/26/18
  */
-@Component
+@Service
 public abstract class LicenseAbstract implements LicenseInterface {
 
     @Value("${license}")

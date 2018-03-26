@@ -38,6 +38,9 @@ public class Certificate {
     @Autowired
     private RaService raService;
 
+    @Autowired
+    private LicenseUtil licenseUtil;
+
     /**
      * 直接生成pfx证书文件
      * @return
@@ -145,7 +148,7 @@ public class Certificate {
         Integer certValidity = 0;// 不设置证书有效期，默认读取services.properties的属性值
         JSONObject jsonObject = new JSONObject();
         try {
-            LicenseUtil.init();
+            licenseUtil.registry();
 
             /** 产生CSR(证书请求 即 p10) **/
             String certReqBuf = "";
@@ -169,9 +172,8 @@ public class Certificate {
             e.printStackTrace();
         } catch (CertApiException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+
         return "success";
     }
 
