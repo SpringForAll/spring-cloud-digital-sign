@@ -6,7 +6,7 @@ import cn.topca.api.cert.TCA;
 import com.liumapp.digitalsign.test.ca.tianwei.cert.CertInfo;
 import com.liumapp.digitalsign.test.ca.tianwei.component.RaService;
 import com.liumapp.digitalsign.test.ca.tianwei.user.UserInfo;
-import com.liumapp.digitalsign.test.ca.tianwei.utils.LicenseUtil;
+import com.liumapp.digitalsign.test.ca.tianwei.license.LicenseUtil;
 import com.liumapp.digitalsign.test.ca.tianwei.utils.ServerPKCSUtil;
 import org.bouncycastle.util.encoders.Base64;
 import org.json.JSONException;
