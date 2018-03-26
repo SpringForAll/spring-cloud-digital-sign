@@ -57,9 +57,41 @@ but you can also export it to anywhere you like
     
     your certificate file should be generated in your keysotre file . 
     
-    in digital-sign-demo service , it was saved in demo.ks . 
+    in digital-sign-demo service , it was saved in demo.ks .
+    
+* now back to the project directory , and use the command : 
+
+      keytool -list -v -keystore ./demo.ks
+    
+  you will get the certificate info .   
+  
+  like :
+  
+      您的密钥库包含 2 个条目
+      
+      别名: demo-a
+      创建日期: 2018-3-16
+      条目类型: PrivateKeyEntry
+      证书链长度: 1
+      证书[1]:
+      所有者: CN=lisi, ST=Hangzhou, L=ZheJiang, C=China
+      发布者: CN=lisi, ST=Hangzhou, L=ZheJiang, C=China
+      序列号: 1f4468a0e78d77aa
+      有效期开始日期: Fri Mar 16 15:52:16 CST 2018, 截止日期: Sat Mar 16 21:41:28 CST 2019
+      证书指纹:
+               MD5: BC:62:D2:9C:20:0F:2A:2C:3D:AA:D2:D1:DB:13:E4:8C
+               SHA1: 42:F4:4F:60:49:E7:03:A1:FB:E4:A0:E4:54:EC:AB:88:FF:3B:61:6D
+               SHA256: E8:51:75:C9:1B:36:D4:90:5D:24:B8:F9:AF:96:8E:92:95:C8:E7:CA:79:C2:0C:BF:F2:8F:99:7D:17:37:7F:A8
+               签名算法名称: SHA256withRSA
+               版本: 3
+      
+      
+      *******************************************
+      *******************************************
+      
     
 ### export a certificate file to folder
+
 
               
             

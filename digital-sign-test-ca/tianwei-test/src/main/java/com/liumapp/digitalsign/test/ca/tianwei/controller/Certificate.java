@@ -140,7 +140,6 @@ public class Certificate {
         // userInfo.setUserAdditionalField9(userAdditionalField9); // 扩展字段9
         // userInfo.setUserAdditionalField10(userAdditionalField10); // 扩展字段10
 
-
         /** 调用接口制作证书 **/
         String passCode = "";
         Integer certValidity = 0;// 不设置证书有效期，默认读取services.properties的属性值
