@@ -69,10 +69,10 @@ public abstract class LicenseAbstract implements LicenseInterface {
         timeArray[2] = Integer.parseInt(retryPolicys[2]);
 
         JSONObject rsa = new JSONObject();
-        rsa.put("caCertPath", this.caCertPath);
+        rsa.put("caCertPath", this.path + this.caCertPath);
         rsa.put("checkRevoke", checkRevoke);
         rsa.put("checkMode", this.checkMode);
-        rsa.put("savePath", this.path + this.ksPath);
+        rsa.put("savePath", this.path + this.caSavePath);
         rsa.put("retryPolicy", timeArray);
         rsa.put("baseUrl", this.caBaseUrl);
         trustCA.put(rsa);
