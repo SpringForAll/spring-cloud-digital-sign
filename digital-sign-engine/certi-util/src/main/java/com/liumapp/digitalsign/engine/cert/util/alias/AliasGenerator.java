@@ -16,9 +16,13 @@ import java.math.BigInteger;
 @Component
 public class AliasGenerator {
 
-    public String strTo16 (BigInteger serialNumber) {
-        String result = serialNumber.toString(16).toUpperCase();
-        return result;
+    /**
+     * todo
+     * @param serialNumber biginteger
+     * @return String
+     */
+    public String getAlias (BigInteger serialNumber) {
+        return "todo";
     }
 
 }
