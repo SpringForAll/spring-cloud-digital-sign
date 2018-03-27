@@ -14,6 +14,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class AliasGenerator {
 
-
+    public String strTo16 (String serialNumber) {
+        String result = "";
+        for (int i = 0 ; i < serialNumber.length() ; i ++) {
+            int ch = (int) serialNumber.charAt(i);
+            String s16 = Integer.toHexString(ch);
+            result += s16;
+        }
+        return result;
+    }
 
 }
