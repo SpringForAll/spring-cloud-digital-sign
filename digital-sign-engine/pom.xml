@@ -16,6 +16,7 @@
   <modules>
     <module>keystore-manager</module>
     <module>sign-helper</module>
+    <module>certi-util</module>
   </modules>
 
   <name>digital-sign-engine</name>
