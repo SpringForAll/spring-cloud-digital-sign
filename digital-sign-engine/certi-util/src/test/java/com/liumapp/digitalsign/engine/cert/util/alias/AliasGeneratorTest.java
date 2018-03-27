@@ -29,11 +29,9 @@ public class AliasGeneratorTest {
     @Ignore
     @Test
     public void generate () {
-//        DERInteger serialNumber = DERInteger.getInstance("720e92053fb45cc880c833f530dba1b72320cb56");
         String se = "720e92053fb45cc880c833f530dba1b72320cb56";
-        String alias = aliasGenerator.getAlias(new BigInteger("720e92053fb45cc880c833f530dba1b72320cb56" , 16));
+        String alias = aliasGenerator.getAlias(new BigInteger(se , 16));
         Assert.assertEquals("d0016314850841823fc6f02d90a89023740ad1d2" , alias);
-
     }
 
 }
