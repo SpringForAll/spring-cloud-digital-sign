@@ -168,6 +168,8 @@ public class Certificate {
             }
             CertStore.installCert(certInfo.getCertSignBuf());// 安装证书
             System.out.println("当前申请的证书序列号是：[" + certInfo.getCertSerialNumber() + "]");
+            System.out.println("当前存入JKS的证书别名为:["+ certInfo.getCertSerialnumberKmc() +"]");
+
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (CertApiException e) {
