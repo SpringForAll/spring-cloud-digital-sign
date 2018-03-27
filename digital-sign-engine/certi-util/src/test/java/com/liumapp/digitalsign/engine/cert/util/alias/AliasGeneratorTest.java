@@ -1,5 +1,16 @@
 package com.liumapp.digitalsign.engine.cert.util.alias;
 
+import com.liumapp.digitalsign.engine.cert.util.CertUtil;
+import org.bouncycastle.asn1.DERInteger;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.math.BigInteger;
+
 /**
  * @author liumapp
  * @file AliasGeneratorTest.java
@@ -7,5 +18,20 @@ package com.liumapp.digitalsign.engine.cert.util.alias;
  * @homepage http://www.liumapp.com
  * @date 3/27/18
  */
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {CertUtil.class})
 public class AliasGeneratorTest {
+
+    @Autowired
+    private AliasGenerator aliasGenerator;
+
+    @Test
+    public void generate () {
+//        DERInteger serialNumber = DERInteger.getInstance("720e92053fb45cc880c833f530dba1b72320cb56");
+        String se = "720e92053fb45cc880c833f530dba1b72320cb56";
+        String alias = aliasGenerator.strTo16(new BigInteger("720e92053fb45cc880c833f530dba1b72320cb56" , 16));
+        Assert.assertEquals("d0016314850841823fc6f02d90a89023740ad1d2" , alias);
+
+    }
+
 }

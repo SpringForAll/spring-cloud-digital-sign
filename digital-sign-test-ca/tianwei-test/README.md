@@ -8,6 +8,6 @@
 
 * the certificate password equals the keystore password . 
 
-* The alias of the certificate is saved on the basis of the serial number of the certificate to 16 bit .
+* The alias of the certificate is saved on the basis of the serial number of the certificate to 16.
   
  

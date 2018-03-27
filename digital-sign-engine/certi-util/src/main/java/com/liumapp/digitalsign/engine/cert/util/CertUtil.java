@@ -1,5 +1,7 @@
 package com.liumapp.digitalsign.engine.cert.util;
 
+import com.liumapp.digitalsign.engine.cert.util.alias.AliasGenerator;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -12,5 +14,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CertUtil {
 
+    @Bean
+    public AliasGenerator aliasGenerator () {
+        return new AliasGenerator();
+    }
 
 }

@@ -2,6 +2,8 @@ package com.liumapp.digitalsign.engine.cert.util.alias;
 
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
+
 /**
  * @author liumapp
  * @file AliasGenerator.java
@@ -14,13 +16,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class AliasGenerator {
 
-    public String strTo16 (String serialNumber) {
-        String result = "";
-        for (int i = 0 ; i < serialNumber.length() ; i ++) {
-            int ch = (int) serialNumber.charAt(i);
-            String s16 = Integer.toHexString(ch);
-            result += s16;
-        }
+    public String strTo16 (BigInteger serialNumber) {
+        String result = serialNumber.toString(16).toUpperCase();
         return result;
     }
 
