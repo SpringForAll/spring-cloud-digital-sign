@@ -94,5 +94,7 @@ but you can also export it to anywhere you like
 
 
               
-            
+## attention 
+
+For personal certificate , you must identify Personal before using it (like short message)            
             

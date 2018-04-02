@@ -10,4 +10,8 @@
 
 * The alias of the certificate is saved on the basis of the serial number of the certificate to 16.
   
- 
+### cert alias : 
+    
+    PublicKey pubKey = cert.getPubKey();
+    byte[] binPubKey = pubKey.getEncoded();
+    String alias = Hex.encodeHexString(in); 

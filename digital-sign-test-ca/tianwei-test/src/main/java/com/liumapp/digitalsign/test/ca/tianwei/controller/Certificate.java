@@ -1,8 +1,10 @@
 package com.liumapp.digitalsign.test.ca.tianwei.controller;
 
+import cn.tca.TopBasicCrypto.util.encoders.Hex;
 import cn.topca.api.cert.CertApiException;
 import cn.topca.api.cert.CertStore;
 import cn.topca.api.cert.TCA;
+import cn.topca.core.ext.bc.util.KeyStoreUtils;
 import com.liumapp.digitalsign.test.ca.tianwei.cert.CertInfo;
 import com.liumapp.digitalsign.test.ca.tianwei.component.RaService;
 import com.liumapp.digitalsign.test.ca.tianwei.user.UserInfo;
@@ -20,6 +22,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.security.PublicKey;
 
 /**
  * @author liumapp
@@ -166,7 +169,9 @@ public class Certificate {
             if (jsonObject.get("certInfo") != null) {
                 certInfo = (CertInfo) jsonObject.get("certInfo");
             }
+
             CertStore.installCert(certInfo.getCertSignBuf());// 安装证书
+//            KeyStoreUtils.getPublicKeyAlias()
             System.out.println("当前申请的证书序列号是：[" + certInfo.getCertSerialNumber() + "]");
             System.out.println("当前存入JKS的证书别名为:["+ certInfo.getCertSerialnumberKmc() +"]");
 

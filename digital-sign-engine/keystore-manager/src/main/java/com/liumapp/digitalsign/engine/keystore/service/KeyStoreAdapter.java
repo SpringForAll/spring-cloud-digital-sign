@@ -116,6 +116,10 @@ public class KeyStoreAdapter {
         return (X509Certificate) this.keyStore.getCertificate(alias);
     }
 
+//    public X509Certificate getCertificateBySerialNumber(String serailNumber) {
+//        return (X509Certificate) this.keyStore.get
+//    }
+
     public X509Certificate[] getCertificates(String alias) throws KeyStoreException {
         return Stream.of(this.keyStore.getCertificateChain(alias))
                 .map(cert -> (X509Certificate) cert)

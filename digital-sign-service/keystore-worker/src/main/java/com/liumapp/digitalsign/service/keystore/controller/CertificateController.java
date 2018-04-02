@@ -28,7 +28,7 @@ public class CertificateController {
     private String keyStoreSavePath;
 
     /**
-     * generate personal certificate
+     * generate personal certificate by self .
      * @param personalCertPattern params required
      * @return String
      */
@@ -57,6 +57,8 @@ public class CertificateController {
         }
         return ResponseEntity.ok("generator done");
     }
+
+//    public String generate (@RequestBody )
 
     @RequestMapping("/export")
     public ResponseEntity<?> export (@RequestBody ExporterPattern exporterPattern) {
