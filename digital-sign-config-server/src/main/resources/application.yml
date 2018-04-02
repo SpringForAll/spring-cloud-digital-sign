@@ -4,9 +4,13 @@ spring:
   cloud:
     config:
       server:
+        native:
+          search-locations: /usr/local/tomcat/project/spring-cloud-digital-sign/config/
         git:
           uri: https://github.com/SpringForAll/spring-cloud-digital-sign/
           search-paths: config
+  profiles:
+    active: native
 
 server:
   port: 7001
@@ -15,4 +19,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://sign-eureka:1234/eureka/
-
