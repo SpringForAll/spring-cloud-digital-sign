@@ -17,6 +17,7 @@
     <module>keystore-manager</module>
     <module>sign-helper</module>
     <module>certi-util</module>
+    <module>tianwei-helper</module>
   </modules>
 
   <name>digital-sign-engine</name>
