@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.config.server;
+package com.spring4all.digitalsign.config.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
