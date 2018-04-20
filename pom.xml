@@ -39,7 +39,6 @@
 		<module>digital-sign-gateway</module>
     	<module>digital-sign-config-server</module>
     	<module>digital-sign-demo</module>
-    <module>digital-sign-test-ca</module>
   </modules>
 
 	<dependencyManagement>
