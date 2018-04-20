@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.demo;
+package com.spring4all.digitalsign.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
