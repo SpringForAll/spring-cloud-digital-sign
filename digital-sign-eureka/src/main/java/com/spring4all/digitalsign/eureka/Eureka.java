@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.eureka;
+package com.spring4all.digitalsign.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
