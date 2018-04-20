@@ -39,10 +39,110 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.15</version>
     </dependency>
+
+    <!--tianwei require-->
     <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcmail-jdk15</artifactId>
       <version>1.46</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis</groupId>
+      <artifactId>axis</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15</artifactId>
+      <version>1.46</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-configuration</groupId>
+      <artifactId>commons-configuration</artifactId>
+      <version>1.6</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-discovery</groupId>
+      <artifactId>commons-discovery</artifactId>
+      <version>0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.itrus</groupId>
+      <artifactId>iTrusJavaCertAPI-2.7.10</artifactId>
+      <version>2.7.10</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/iTrusJavaCertAPI-2.7.10.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>javax.wsdl</groupId>
+      <artifactId>javax</artifactId>
+      <version>1.6.2</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/javax.wsdl_1.6.2.v201012040545.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.ibm.wsdl</groupId>
+      <artifactId>wsdl</artifactId>
+      <version>1.6.2</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/javax.wsdl_1.6.2.v201012040545.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml</groupId>
+      <artifactId>jaxrpc</artifactId>
+      <version>1.6.2</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/jaxrpc.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20090211</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/json-20090211.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>cn.topca</groupId>
+      <artifactId>top-core</artifactId>
+      <version>1.9</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/top-core-1.9.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>cn.topca.security</groupId>
+      <artifactId>top-security</artifactId>
+      <version>1.9</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/top-security-1.9.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>cn.tca.TopBasicCrypto</groupId>
+      <artifactId>TopBasicCrypto</artifactId>
+      <version>1.9</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/TopBasicCrypto-1.9.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>cn.topca.api.cert</groupId>
+      <artifactId>TopESA-java</artifactId>
+      <version>1.9</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/TopESA-java.jar</systemPath>
     </dependency>
   </dependencies>
 
@@ -76,6 +176,28 @@
           </resources>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+          <compilerArguments>
+            <extdirs>${project.basedir}/lib</extdirs>
+          </compilerArguments>
+        </configuration>
+      </plugin>
     </plugins>
+    <resources>
+      <resource>
+        <targetPath>./lib/</targetPath>
+        <directory>./lib/</directory>
+        <includes>
+          <include>*.jar</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 </project>

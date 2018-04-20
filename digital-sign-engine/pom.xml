@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.liumapp.digitalsign</groupId>
+    <groupId>com.spring4all.digitalsign</groupId>
     <artifactId>spring-cloud-digital-sign</artifactId>
     <version>v1.0.0</version>
   </parent>
@@ -14,10 +14,10 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>keystore-manager</module>
-    <module>sign-helper</module>
-    <module>certi-util</module>
-    <module>tianwei-helper</module>
+    <!--<module>keystore-manager</module>-->
+    <!--<module>sign-helper</module>-->
+    <!--<module>certi-util</module>-->
+    <!--<module>tianwei-helper</module>-->
   </modules>
 
   <name>digital-sign-engine</name>

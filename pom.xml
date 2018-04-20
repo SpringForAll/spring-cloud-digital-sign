@@ -8,7 +8,7 @@
 		<version>1.5.6.RELEASE</version>
 	</parent>
 
-	<groupId>com.liumapp.digitalsign</groupId>
+	<groupId>com.spring4all.digitalsign</groupId>
 	<artifactId>spring-cloud-digital-sign</artifactId>
 	<version>v1.0.0</version>
 	<packaging>pom</packaging>

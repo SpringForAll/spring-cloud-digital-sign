@@ -19,3 +19,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://sign-eureka:1234/eureka/
+

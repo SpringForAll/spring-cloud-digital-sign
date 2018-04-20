@@ -23,6 +23,6 @@
 	</developers>
 
   <modules>
-	  <module>tianwei-test</module>
+	  <!--<module>tianwei-test</module>-->
   </modules>
 </project>
