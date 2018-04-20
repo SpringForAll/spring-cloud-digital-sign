@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.liumapp.digitalsign</groupId>
+    <groupId>com.spring4all.digitalsign</groupId>
     <artifactId>spring-cloud-digital-sign</artifactId>
     <version>v1.0.0</version>
   </parent>
 
-  <groupId>com.liumapp.digitalsign.gateway</groupId>
+  <groupId>com.spring4all.digitalsign.gateway</groupId>
   <artifactId>digital-sign-gateway</artifactId>
   <version>v1.0.0</version>
   <packaging>jar</packaging>

@@ -8,7 +8,7 @@
     <version>v1.0.0</version>
   </parent>
 
-  <groupId>com.liumapp.digitalsign.engine</groupId>
+  <groupId>com.spring4all.digitalsign.engine</groupId>
   <artifactId>digital-sign-engine</artifactId>
   <version>v1.0.0</version>
   <packaging>pom</packaging>

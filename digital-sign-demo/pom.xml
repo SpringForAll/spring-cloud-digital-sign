@@ -8,7 +8,7 @@
     <version>v1.0.0</version>
   </parent>
 
-  <groupId>com.liumapp.digitalsign.demo</groupId>
+  <groupId>com.spring4all.digitalsign.demo</groupId>
   <artifactId>digital-sign-demo</artifactId>
   <version>v1.0.0</version>
   <packaging>jar</packaging>
