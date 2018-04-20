@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.gateway;
+package com.spring4all.digitalsign.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;

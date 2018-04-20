@@ -1,4 +1,4 @@
-package com.liumapp.digitalsign.gateway.filter;
+package com.spring4all.digitalsign.gateway.filter;
 
 
 import com.netflix.zuul.ZuulFilter;

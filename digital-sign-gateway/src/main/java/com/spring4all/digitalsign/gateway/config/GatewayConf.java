@@ -1,6 +1,6 @@
-package com.liumapp.digitalsign.gateway.config;
+package com.spring4all.digitalsign.gateway.config;
 
-import com.liumapp.digitalsign.gateway.filter.AccessFilter;
+import com.spring4all.digitalsign.gateway.filter.AccessFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
