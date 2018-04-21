@@ -14,10 +14,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <!--<module>keystore-manager</module>-->
-    <!--<module>sign-helper</module>-->
-    <!--<module>certi-util</module>-->
-    <!--<module>tianwei-helper</module>-->
+    <module>self-cert-core</module>
   </modules>
 
   <name>digital-sign-engine</name>

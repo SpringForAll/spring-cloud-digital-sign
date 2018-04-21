@@ -2,15 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.liumapp.cert.core</groupId>
-  <artifactId>cert-core</artifactId>
+  <parent>
+    <groupId>com.spring4all.digitalsign.engine</groupId>
+    <artifactId>digital-sign-engine</artifactId>
+    <version>v1.0.0</version>
+  </parent>
+
+  <groupId>com.spring4all.digitalsign.engine.selfcert.core</groupId>
+  <artifactId>self-cert-core</artifactId>
   <version>v1.0.0</version>
   <packaging>jar</packaging>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <log4j.version>2.9.1</log4j.version>
-    <java.version>1.8</java.version>
   </properties>
 
   <name>cert-core</name>
