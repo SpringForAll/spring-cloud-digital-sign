@@ -15,6 +15,7 @@
 
   <modules>
     <module>self-cert-core</module>
+    <module>sign-core</module>
   </modules>
 
   <name>digital-sign-engine</name>
