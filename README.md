@@ -23,6 +23,8 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 
 * 获取用户个人信息并生成RSA2自签证书
 
+* 封装签名算法、证书生成算法为digital-sign-core
+
 * 调用封装好的签名算法，将数字证书签署在转换好的PDF合同上
 
 ## how to use
