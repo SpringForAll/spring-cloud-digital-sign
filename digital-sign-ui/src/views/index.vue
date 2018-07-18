@@ -16,8 +16,10 @@
           <Step title="签署信息确认" content="后端自动生成签署人证书信息、签署位置、签章图片等相关信息"></Step>
           <Step title="下载合同文档" content="下载带有双方证书签名的合同文档"></Step>
         </Steps>
-        <doc-upload v-if="current == 0" @next="nextStep" @setDocData="setDocData" :convertId="convertId"></doc-upload>
-        <converting v-if="current == 1" :docList="docList" @next="nextStep" :convertId="convertId"></converting>
+        <upload-doc v-if="current == 0"></upload-doc>
+        <upload-signer v-if="current == 1"></upload-signer>
+        <confirm-info v-if="current == 2"></confirm-info>
+        <download-doc v-if="current == 3"></download-doc>
       </Card>
       </Col>
     </Row>
@@ -29,10 +31,18 @@
   </div>
 </template>
 <script>
+import uploadDoc from '@/components/upload-doc'
+import uploadSigner from '@/components/upload-signer'
+import confirmInfo from '@/components/confirm-info'
+import downloadDoc from '@/components/download-doc'
 export default {
   name: 'index',
+  components: {
+    uploadDoc, uploadSigner, confirmInfo, downloadDoc
+  },
   data () {
     return {
+      current: 0,
       people: 1
     }
   }
