@@ -1,11 +1,11 @@
 # spring-cloud-digital-sign
-Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use right now .
+Sign personal RSA2 certificate in PDF documents, under coding, please don't use right now .
 
 [中文文档](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/README_CN.md) | [English Document](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/README.md)
 
-## to do list 
+## To do list 
 
-### frontend
+### Frontend
 
 * 添加用户上传一个或者多个doc文档的界面
 
@@ -15,7 +15,7 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 
 * 添加带有证书的PDF下载页面
 
-### backend
+### Backend
 
 * 保存用户上传的doc文档
 
@@ -27,41 +27,41 @@ Sign personal RSA2 certificate in PDF documents  , under coding , plz don't use 
 
 * 调用封装好的签名算法，将数字证书签署在转换好的PDF合同上
 
-## how to use
+## How to use
 
-I'm making big change , plz don't use right now , thks.  
+I am making big change, please don't use right now. Thanks.  
 
-### run in docker 
+### Run in docker 
 
 * build maven project and push them into docker by running "build-images.sh"
 
-    plz pay attention , you need install digital-sign-engine first . (if not , maven will report an error that no denpendency find . )
+    please pay attention, you need install digital-sign-engine first (otherwise maven will report an error that no denpendency find).
     
         cd digital-sign-engine
         
         mvn install
  
-* running project by using docker-compose :
+* running project by using docker-compose:
  
         docker-compose up -d 
         
-    then , you can view http://localhost:1234/ and find : (this is going to take about 2~3 mins in Mac Pro , plz be patient)
+    then, you can view http://localhost:1234/ and find: (this is going to take about 2~3 mins in Mac Pro, please be patient)
     
     ![start_done.jpg](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/pic/start_done.jpg)
      
-    and in docker pannel , you can find : 
+    and in docker pannel, you can find: 
      
     ![docker_pannel.jpg](https://github.com/SpringForAll/spring-cloud-digital-sign/blob/master/pic/docker_pannel.jpg)
     
-### run in your own IDE
+### Run in your own IDE
 
-* import the project .
+* import the project
 
-* update your local hosts file , add "127.0.0.1 sign-eureka"
+* update your local hosts file, add "127.0.0.1 sign-eureka"
 
-* start eureka first , then config-server , then gateway , then service ...    
+* start eureka first, then config-server, then gateway, then service...    
      
-### generate a keystore
+### Generate a keystore
             
 A keystore is a container of certificate . 
 
@@ -73,7 +73,7 @@ Plz make sure all the pattern get their own empty constructor .
     
     you can find a demo.ks file in your project . 
     
-### generate a certificate in your keystore
+### Generate a certificate in your keystore
 
 A certificate should saved in a keystore file 
 
@@ -118,11 +118,11 @@ but you can also export it to anywhere you like
       *******************************************
       
     
-### export a certificate file to folder
+### Export a certificate file to folder
 
 
               
-## attention 
+## Attention 
 
-For personal certificate , you must identify Personal before using it (like short message)            
+For personal certificate, you must identify Personal before using it (like short message)            
             
