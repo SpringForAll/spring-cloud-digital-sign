@@ -21,6 +21,9 @@ zuul:
     digital-sign-demo:
       serviceId: digital-sign-demo
       path: /**
+    service-api:
+      serivceId: service-api
+      path: /**
 
 ribbon:
   ReadTimeout: 10000

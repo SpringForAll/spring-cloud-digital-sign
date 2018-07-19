@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: service-api
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: sign-config-server
+      profile: dev
+      label: master
+server:
+  port: 8083
+eureka:
+  client:
+    service-url:
+      defaultZone: http://sign-eureka:1234/eureka/
