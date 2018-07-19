@@ -48,6 +48,7 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.15</version>
     </dependency>
+
     <!--cloud require  -->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
@@ -57,6 +58,7 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>
+
     <!--http util-->
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
