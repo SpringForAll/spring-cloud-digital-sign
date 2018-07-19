@@ -28,6 +28,7 @@
   <modules>
     <module>keystore-worker</module>
     <module>pdf-worker</module>
+    <module>service-api</module>
   </modules>
 
 </project>
