@@ -25,7 +25,7 @@ import java.lang.reflect.Method;
  * @date 7/19/18
  */
 @Component
-public class RabbitMqListenerAware implements ChannelAwareMessageListener, ApplicationContextAware {
+public class RabbitListenerAware implements ChannelAwareMessageListener, ApplicationContextAware {
 
     @Resource
     private MessageConverter messageConverter;
@@ -38,7 +38,7 @@ public class RabbitMqListenerAware implements ChannelAwareMessageListener, Appli
 
     private ApplicationContext applicationContext;
 
-    private static Logger logger = LoggerFactory.getLogger(RabbitMqListenerAware.class);
+    private static Logger logger = LoggerFactory.getLogger(RabbitListenerAware.class);
 
     @Override
     public void onMessage(Message message, Channel channel) throws Exception {
