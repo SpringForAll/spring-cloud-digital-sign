@@ -102,6 +102,13 @@
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>liumapp</id>
+      <url>http://www.liumapp.com:8081/repository/liumapp/</url>
+    </repository>
+  </repositories>
+
   <build>
     <plugins>
       <plugin>
