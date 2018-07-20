@@ -1,6 +1,7 @@
 package com.spring4all.digitalsign.service.api.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.spring4all.digitalsign.service.api.entity.DocEntity;
 import com.spring4all.digitalsign.service.api.util.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -46,28 +47,5 @@ public class FileUploadController {
         return JSON.toJSONString("success");
     }
 
-    @RequestMapping("/multybase64")
-    @ResponseBody
-    public String multyBase64Upload (@RequestBody MultyDocEntity[] list) {
-        try {
-            int index = 0;
-            for (MultyDocEntity doc : list) {
-                MultipartFile file = fileManager.base64toMultipart(doc.getContent());
-                fileManager.save(file);
-                convertDocPattern.setFileIndex(index);
-                convertDocPattern.setConvertId(doc.getConvertId());
-                convertDocPattern.setDocPath(fileManager.getSavePath());
-                convertDocPattern.setPdfPath(fileManager.getSavePath());
-                convertDocPattern.setOriginalName(fileManager.getFileName());
-                convertDocPattern.setSaveName(fileManager.getFileName() + ".pdf");
-                convertDocPublisher.send(JSON.toJSONString(convertDocPattern));
-                index++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return JSON.toJSONString("error");
-        }
-        return JSON.toJSONString("success");
-    }
 
 }
