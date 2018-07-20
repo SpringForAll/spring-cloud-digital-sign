@@ -3,6 +3,9 @@ package com.spring4all.digitalsign.service.api.queue.consumer;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.liumapp.convert.doc.Doc2PDF;
+import com.spring4all.digitalsign.service.api.queue.pattern.DocPattern;
+import com.spring4all.digitalsign.service.api.queue.pattern.QueueJobErrorInfoPattern;
+import com.spring4all.digitalsign.service.api.queue.publisher.service.QueueJobErrorInfoPublisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +30,11 @@ public class DocConsumer {
     @Autowired
     private QueueJobErrorInfoPattern queueJobErrorInfoPattern;
 
-    private static Logger logger = LoggerFactory.getLogger(ConverterConsumer.class);
+    private static Logger logger = LoggerFactory.getLogger(DocConsumer.class);
 
     public void process (String jsonPattern) {
         logger.info("convert job begin , doc path is : " + jsonPattern);
-        ConvertDocPattern docPattern = JSON.parseObject(jsonPattern, ConvertDocPattern.class);
+        DocPattern docPattern = JSON.parseObject(jsonPattern, DocPattern.class);
         try {
             Thread.sleep(1500);
             doc2PDF.doc2pdf(docPattern.getPdfPath() + "/" + docPattern.getSaveName(), docPattern.getDocPath() + "/" + docPattern.getOriginalName());
