@@ -1,6 +1,7 @@
 package com.spring4all.digitalsign.service.api.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.spring4all.digitalsign.service.api.util.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
