@@ -2,6 +2,8 @@ package com.spring4all.digitalsign.service.api.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.spring4all.digitalsign.service.api.entity.DocEntity;
+import com.spring4all.digitalsign.service.api.queue.pattern.DocPattern;
+import com.spring4all.digitalsign.service.api.queue.publisher.service.DocPublisherService;
 import com.spring4all.digitalsign.service.api.util.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +26,10 @@ public class FileUploadController {
     private FileManager fileManager;
 
     @Autowired
-    private ConvertDocPublisher convertDocPublisher;
+    private DocPublisherService docPublisherService;
 
     @Autowired
-    private ConvertDocPattern convertDocPattern;
+    private DocPattern docPattern;
 
     @RequestMapping("/")
     public String upload (@RequestParam("file") MultipartFile file) throws IOException {
