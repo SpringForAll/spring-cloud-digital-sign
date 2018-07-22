@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+import util from '@/libs/util'
 import uploadDoc from '@/components/upload-doc'
 import uploadSigner from '@/components/upload-signer'
 import confirmInfo from '@/components/confirm-info'
@@ -37,8 +38,20 @@ export default {
   },
   data () {
     return {
-      current: 0
+      current: 0,
+      ws: null,
+      convertId: 0,
+      doc: null
     }
+  },
+  created () {
+    this.convertId = util.randNumber(5);
+  },
+  nextStep () {
+    this.current++;
+  },
+  prevStep () {
+    this.current--;
   }
 }
 </script>
