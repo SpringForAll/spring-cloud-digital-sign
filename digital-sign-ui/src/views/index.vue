@@ -11,10 +11,10 @@
       <Col span="18" offset="3">
       <Card>
         <Steps :current="current">
-          <Step title="上传合同文档" content="上传一个doc或PDF文档"></Step>
-          <Step title="填写签署人" content="上传参与合同签署人的相关信息，限制为两人"></Step>
-          <Step title="签署信息确认" content="后端自动生成签署人证书信息、签署位置、签章图片等相关信息"></Step>
-          <Step title="下载合同文档" content="下载带有双方证书签名的合同文档"></Step>
+          <Step title="初始化证书容器" content="输入证书容器相关信息，生成JKS"></Step>
+          <Step title="生成证书" content="利用RSA2算法，生成自签证书，并存储于JKS容器"></Step>
+          <Step title="执行签名" content="选择证书，调用签名算法签署在PDF上"></Step>
+          <Step title="下载" content="下载带有数字证书的PDF文档，推荐使用Adobe Acrobat查看证书"></Step>
         </Steps>
         <upload-doc v-if="current == 0"></upload-doc>
         <upload-signer v-if="current == 1"></upload-signer>
