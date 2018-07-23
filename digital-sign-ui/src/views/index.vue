@@ -17,16 +17,25 @@
           <Step title="下载" content="下载带有数字证书的PDF文档，推荐使用Adobe Acrobat查看证书"></Step>
         </Steps>
       </Card>
+      <init-jks v-if="current == 0"></init-jks>
+      <init-cert v-else-if="current == 1"></init-cert>
+      <do-sign v-else-if="current == 2"></do-sign>
+      <download v-else-if="current == 3"></download>
+      <div v-else>unknow current value</div>
       </Col>
     </Row>
   </div>
 </template>
 <script>
 import util from '@/libs/util'
+import InitJks from '@/components/init-jks'
+import InitCert from '@/components/init-cert'
+import DoSign from '@/components/do-sign'
+import Download from '@/components/download'
 export default {
   name: 'index',
   components: {
-
+    InitJks, InitCert, DoSign, Download
   },
   data () {
     return {
