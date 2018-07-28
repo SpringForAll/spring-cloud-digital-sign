@@ -100,6 +100,13 @@
       <artifactId>nekohtml</artifactId>
       <version>1.9.22</version>
     </dependency>
+
+    <!--jks require-->
+    <dependency>
+      <groupId>com.liumapp.jks.core</groupId>
+      <artifactId>jks-core</artifactId>
+      <version>v1.0.0</version>
+    </dependency>
   </dependencies>
 
   <repositories>
