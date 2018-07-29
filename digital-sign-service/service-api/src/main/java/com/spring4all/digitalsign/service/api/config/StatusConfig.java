@@ -12,6 +12,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class StatusConfig {
 
+    public static class ConvertStatus {
+        public static Integer WAITING_CONVERT = 0;
 
+        public static Integer CONVERTED_FAILD = 2;
+
+        public static Integer CONVERTED_SUCCESS = 1;
+    }
 
 }
